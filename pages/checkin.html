@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html id="checkin" lang="pt-br">
+<head>
+    <meta charset=UTF-8>
+    <meta name=author content="">
+    <meta name=description content="">
+    <meta name=keywords content="">
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+
+    <link rel=stylesheet href="css/normalize.css">
+    <link rel=stylesheet href="css/default.css">
+
+    <link rel=stylesheet media="screen and (max-width:480px)" href="css/estilo-480px.css">
+    <link rel=stylesheet media="screen and (min-width: 481px) and (max-width:839px) " href="css/estilo-839px.css">
+    <link rel=stylesheet media="screen and (min-width: 840px) and (max-width:1024px) " href="css/estilo-1024px.css">
+    <link rel=stylesheet media="screen and (min-width: 1025px)" href="css/estilo-1025px.css">
+</head>
+
+<body>
+    <header class="header-check">
+        <img id="img-checkin" src="imagens/checkin.gif">
+        <h1 class="h1-conf">Confirmação de e-mail</h1>
+        <h2 class="h2-conf">Insira o código que enviamos para o seu e-mail</h2>
+    </header>
+
+    <div class="div-checkin">
+        <form class="form-checkin" action="/action_page.php">
+            <ul class="eu-sou-brisado">
+                <li>
+                    <input class="inp-checkin" type="text" id="fname" name="fname" placeholder="" maxlength="1"><br><br>
+                    <input class="inp-checkin" type="text" id="lname" name="lname" placeholder="" maxlength="1"><br><br>
+                    <input class="inp-checkin" type="text" id="lname" name="lname" placeholder="" maxlength="1"><br><br>
+                    <input class="inp-checkin" type="text" id="lname" name="lname" placeholder="" maxlength="1"><br><br>
+                </li>
+            </ul><br><br>
+            <input class="continuar" type="submit" value="Continuar">
+        </form> 
+    </div>
+
+    <footer id="foot-check">
+        <a class="link-env-nov" href="link">Enviar novamente</a>
+        <a class="link-mud-email"href="link">Mudar e-mail</a>
+    </footer>
+</body>
+</html>

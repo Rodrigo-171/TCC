@@ -1,0 +1,853 @@
+.body-x{
+    background-image: radial-gradient(circle, orange, #f8b53a, rgb(255, 136, 0));
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+}
+.body-perfil-pet{
+    background: #fff;
+}
+
+.header-cadas{
+    text-align: center;
+    padding: 0 20px;
+}
+
+.header-login{
+    text-align: center;
+}
+
+.footer-login{
+    text-align: center;
+    margin-top: 5%;
+}
+
+.div-imagem{
+    width: 100%;
+    text-align: center;
+}
+
+.logo {
+    width: 60vw;
+    margin-top: 5%;
+    
+}
+
+.logo2 {
+    width: 25vw;
+    margin-top: 10%;
+}
+
+.h1-login{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 15%;
+    color: white;
+}
+
+.h1-cadas{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-top: 10%;
+    color: white;
+}
+
+h2{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    color: white;
+}
+
+ul {
+    width: 90%;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+li.dois {
+    display: inline-flex;
+    width: 100%;
+    margin: 0 auto;
+}
+li.dois input {
+    width: 50%;
+    margin: 5px;
+}
+li.um input {
+    margin: 5px;
+}
+li.um {
+    display: inline-grid;
+    width: 100%;
+}
+select.estados {
+    height: 30px;
+    width: 50%;
+    margin: 5px;
+}
+select.gen {
+    height: 30px;
+    margin: 5px;
+    width: 45%;
+}
+/*------------------------------------------------------CHECK-IN---------------------------------------------------------------*/
+.header-check{
+    text-align: center;
+    margin: 10% auto;
+}
+
+.h1-conf{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3F3D3F;
+    font-weight: bold;
+    margin-top: 0px;
+}
+
+.h2-conf{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #3F3D3F;
+    font-weight: normal;
+    margin-top: 0px;
+}
+
+#img-checkin {
+    width: 45vw;
+}
+
+.form-checkin{
+    padding: 20px;
+    text-align: center;
+}
+
+.div-checkin{
+    width: 80%;
+    height: 25vh;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.continuar{
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+    background-color: #FCC000;
+    color: white;
+}
+
+.inp-checkin {
+    text-align: center;
+    font-size: 20px;
+    width: 15%;
+    height: 6vh;
+    margin: 5% auto;
+    background-color: #F4F4F4;
+    box-shadow: 0px 3px 0px 0px #c4c4c4;
+}
+
+.eu-sou-brisado li{
+    display: inline-flex;
+}
+
+#checkin{
+    background-color:#EEEEEE;
+    background-image: none;
+}
+
+#foot-check{
+    margin-top: 25%;
+}
+
+.link-env-nov {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #3F3D3F;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 0px;
+}
+
+.link-mud-email{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #3F3D3F;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 0px;
+}
+/*-------------------------------------------HOME--------------------------------------------------*/
+#home{
+    background-color: white;
+    background-image: none;
+}
+body{
+    margin: 0;
+}
+
+.h1-home{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 10px;
+    color: white;
+    
+}
+
+.div-home{
+    background-color: orange;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    height: 55px;
+}
+/*conteudo*/
+
+.div-cont{
+    width: 100%;
+    margin-top: 30px;
+    display: inline-flex;
+    background-color: #92B9C5;
+}
+
+.div-cont2{
+    width: 100%;
+    display: inline-flex;
+    background-color: #FBE6A4;
+}
+
+.div-cont3{
+    width: 100%;
+    display: inline-flex;
+    background-color: #C6E2BE;
+}
+
+.div-cont4{
+    width: 100%;
+    display: inline-flex;
+    background-color: #94CBF0;
+}
+
+.h2-cont{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 15%;
+    text-align: center;
+}
+
+.div-text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    margin-top: -15%;
+    color: white;
+   
+}
+
+.div-grid{
+    width: 100%;
+    padding: 10px;
+    display: grid;
+}
+
+.img-home{
+    width: 45vw;
+    
+}
+
+/*menu Hamburger*/
+    .block-teste{
+        position: relative;
+    }
+    *:before,
+    *:after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .menu {
+        background: #555555;
+        border-radius: 50%;
+        bottom: 25px;
+        box-shadow: 0 0 0 0 #555555, 0 0 0 0 #555555;
+        cursor: pointer;
+        height: 60px;
+        position: fixed;
+        right: 25px;
+        transition:  box-shadow 1.1s cubic-bezier(.19,1,.22,1);
+        width: 60px;
+        z-index: 2;
+    }
+
+
+    .hamburger {
+        position: relative;
+        top: 29px;
+        left: 15px;
+        width: 30px;
+        height: 2px;
+        background: white;
+        display: block;
+        transform-origin: center;
+        transition: .5s ease-in-out;
+    }
+
+    .hamburger:after,
+    .hamburger:before {
+        background: white;
+        content: "";
+        display: block;
+        transition: .5s ease-in-out;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hamburger:before {
+        top: -10px;
+    }
+
+    .hamburger:after {
+        bottom: -10px;
+    }
+
+    .input-home {
+        display: none;
+    }
+
+    .input-home:checked ~ label .menu {
+        box-shadow: 0 0 0 130vw #555555, 0 0 0 130vh #555555;
+    }
+
+    input:checked ~ label .hamburger {
+        transform: rotate(45deg);
+    }
+
+    .input-home:checked ~ label .hamburger:after {
+        transform: rotate(90deg);
+        bottom: 0;
+    }
+
+    .input-home:checked ~ label .hamburger:before {
+        transform: rotate(90deg);
+        top: 0;
+    }
+
+    .input-home:checked ~ ul {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    ul.menu-ul {
+        position: fixed;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, 0%);
+        font-size: 30px;
+        text-align: center;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 2;
+        display: table;
+    }
+
+    a {
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        display: block;
+        margin-bottom: 1em;
+        text-decoration: none;
+    }
+
+/*------------------ DOAÇÃO PARA ONGS ------------------*/
+
+#doa-ong{
+    background-color: white;
+    background-image: none;
+}
+
+.div-capa-ong{
+    background-image: url(../imagens/fotos/14.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+}
+
+
+.box-opacity{
+    width: 100%;
+    opacity: 0.8;
+}
+
+.div-text-capa{
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+}
+.h2-capa-ong{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+}
+
+.p-capa-ong{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: white;
+    margin-top: 0;
+}
+
+.div-tutorial{
+    width: 100%;
+    margin-top: 5%;
+    text-align: center;
+}
+
+.div-passo1{
+    display: inline-block;
+    width: 30%;
+}
+.h3-cont{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #555555;
+    border-radius: 0 0 5px 5px;
+}
+.div-conteiner-passo{
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.h4-passo1{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    font-size: 16px;
+    display: grid;
+    text-align: center;
+    margin: 0 auto;
+    color: #555555;
+}
+
+.h4-passo2{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    font-size: 16px;
+    display: grid;
+    text-align: center;
+    margin: 0 auto;
+    color: #555555;
+}
+
+.h4-passo3{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    font-size: 16px;
+    display: grid;
+    margin: 0 auto;
+    text-align: center;
+    color: #555555;
+}
+
+.icons{
+    width: 15vw;
+    margin: 10%;
+}
+
+.div-englob-ong{
+    width: 100%;
+    margin-top: 5%;
+}
+
+.div-conteiner-ong{
+    width: 100%;
+    display: inline-block;
+    margin: -5% auto;
+}
+
+.div-ong{
+    width: 40%;
+    margin: 5%;
+    text-align: center;
+    float: left;
+    border-radius: 10px;
+}
+
+.logo-ong{
+    width: 35vw;
+    padding: 5px;
+}
+
+.ajd-ong{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 3%;
+    background-color: orange;
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.div-sobre-ong{
+    width: 100%;
+    background-color: #94CBF0;
+}
+
+.logo-sobre-ong{
+    width: 30vw;
+    padding: 3%;
+}
+
+.h3-nome-ong{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+
+.p-inf-ong{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+
+}
+/*----------------------------- CADASTRO PET ---------------------------------*/
+
+#html-cadastro{
+    background-image: none;
+    background-color: #fff;
+}
+
+.h2-cadastro{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: orange;
+}
+
+.img-pets{
+    width: 30vw;
+}
+
+.h3-pets{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: orange;
+    margin: 0;
+}
+
+.cadastroPet{
+    background: #fff;
+}
+
+.div-cadastro{
+    display: flex; /* display: flex é melhor float, ele meio que forma um linha ai caso precisar de coluna mude para flex-direction: column; faz o teste é muito melhor!!! de uma olhada aquo https://the-echoplex.net/flexyboxes/, aqui tambem https://www.youtube.com/watch?v=H91DhKPjhPk ;-) */
+    flex-wrap: wrap;
+    justify-content: center;
+    position: absolute;
+    transition-duration: 0.3s;
+}
+
+.div-cadastro.antes{
+    left: -1000px;
+}
+
+.div-cadastro.passo-ativo{
+    left: 0px;
+}
+
+.div-cadastro.depois{
+    left: 1000px;
+}
+
+#botao-passo2, #botao-passo3, #botao-salvar{
+    display: none;
+}
+
+
+.div-cadastro-titulo, .div-cadastro-botao{
+    width: 100%;
+    padding: 0 15px;
+}
+
+.div-cadastro-botao{
+    padding: 15px;
+}
+
+.div-cadastro-botao > button{
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    background-color: #f28c21;
+    color: #fff;
+}
+
+.div-cadastro-opcao{
+    width: 40%;
+    padding: 0 5px;
+    margin: 7px 0;
+    text-align: center;
+}
+
+.div-cadastro-opcao > button{
+    padding: 15px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.div-cadastro-opcao > button.ativo{
+    outline: -webkit-focus-ring-color auto 1px;
+}
+
+#passo{
+    position: relative;
+    height: 525px;
+    overflow: hidden;
+    transition-duration: 0.3s;
+}
+
+#passo input[type=radio]{
+    display: none;
+}
+
+/*----------------------------- FORMA DE PAGAMENTO ---------------------------------*/
+.pag-fdp{
+    height: 100%;
+    background-color: #fdfdfd;
+}
+.fdp{
+    width: 100%;
+    height: auto;
+    background-color: #FDFDFD;
+    margin-top: 10%;
+    display: block;
+    text-align: center;
+    
+}
+.h4-fdp{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    color: #555555;
+}
+
+.button-fdp{
+    width: 90%;
+    height: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    color: #3F3D3F;
+    background: transparent;
+    border: none;
+    box-shadow: 2px 2px 1px 1px rgb(63 61 63 / 42%);
+    display: inline-flex;
+    padding: 10px;
+    
+}
+
+.far.fa-credit-card{
+    font-size: 25px;
+
+}
+.fas.fa-barcode{
+    font-size: 25px;
+}
+.span-fdp{
+    margin: 5px 5px;
+}
+
+.footer-fdp{
+    background-color: #555555;
+    margin-top: 100%;
+}
+
+.conteiner{
+    display: inline-flex;
+    width: 100%;
+    padding: 10px;
+}
+
+.esq-fdp{
+    width: 50%;
+    text-align: left;
+}
+
+.dir-fdp{
+    width: 50%;
+    
+}
+
+li{ 
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    list-style: none;
+}
+
+.barra-fdp{
+    background-color: #FFAD33;
+    width: 100%;
+    height: 30px;
+}
+
+/*----------------------------- BOLETO E CARTAO ---------------------------------*/
+
+.body-bol{
+    width: 100%;
+    
+    background-color: #F7F7F7;
+
+}
+
+.log-boleto {
+    width: 25%;
+    margin: auto;
+    margin-top: 5%;
+}
+
+.cont-logo{
+    display: inline-flex;
+}
+
+.inp-bol{
+    border: none;
+    Border-bottom: 1px solid black;
+    width: 90%;
+    height: 50px;
+
+}
+.bod-dados{
+    width: 80%;
+    display: block;
+    margin: 0 auto ;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 0.3);
+}
+
+.text-bol{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555555;
+}
+
+.bottom-final{
+    width: 50%;
+    height: 40px;
+    border: none;
+    background-color: orange;
+    color: white;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+/*----------------------------- PERFIL DO PET ---------------------------------*/
+
+.div-foto{
+    display: block;
+    text-align: center;
+    margin-top: 5%;
+}
+.foto-perfil{
+    width: 100px;
+    height: 100px;
+    border-radius: 150px;
+    border: solid;
+    border-color: #555555 ;
+    border-width: 2px;
+    margin: 0 auto;
+}
+
+.button-perfil{
+    width: 100%;
+    display: inline-flex;
+    
+}
+
+.bottom-TE {
+    width: 30%;
+    height: 30px;
+    border-style: solid;
+    border-color: orange;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: white;
+    color: orange;
+    margin: auto;
+}
+
+.dados-perfil{
+    width: 95%;
+    height: auto;
+    margin: 0% 2%;
+    
+}
+
+.text-perf{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: orange;
+    margin: auto;
+}
+
+.inp-perf{
+    width: 95%;
+    height: 25px;
+    margin: auto;
+    border-style: solid;
+    border-color: orange;
+    border-width: 1px;
+}
+
+.ul-dados-perfil{
+    margin: 0 auto;
+    display: inline-flex;
+    text-align: left;
+}
+
+.button-perfil2{
+    width: 100%;
+    display: inline-flex;
+    
+}
+
+.bottom-TE2{
+    width: 45%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: orange;
+    color: white;
+    margin: auto;
+    margin-top: 38%;
+}
+
+.li-perf{
+    margin: 3% 3% auto;
+    width: 50%;
+}

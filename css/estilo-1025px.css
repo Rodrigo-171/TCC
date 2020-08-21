@@ -1,0 +1,271 @@
+* {
+    /* background-color: cornflowerblue; */
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+}
+
+/* HEADERS E MENU */
+
+header{
+    height: 55px;
+}
+
+header .div-home, .header-login{
+    background-color: orange;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 55px;
+    padding-top: 10px;
+    padding-left: 20px;
+    color: #fff;
+}
+
+header .div-home{
+    box-shadow: 0px 0px 5px 1px #cccccccc;
+}
+
+.block-teste{
+    display: block !important;
+    position: fixed;
+    margin-top: 10px;
+    top: 0;
+    right: 20px;
+}
+
+.block-teste input, .block-teste label{
+    display: none;
+}
+
+.block-teste .menu-ul{
+    display: flex;
+    list-style: none;
+}
+
+.block-teste .menu-ul li{
+    margin: 10px;
+}
+
+.block-teste .menu-ul li a{
+    color: #fff;
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+.block-teste .menu-ul li a:hover{
+    opacity: 0.6;
+    text-decoration: underline;
+}
+
+/* HOME */
+
+.div-contgroup{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.div-cont, .div-cont2, .div-cont3, .div-cont4{
+    width: 50%;
+    padding: 15px;
+    text-align: center;
+}
+
+.div-cont{
+ background-color: #92B9C5;
+}
+
+.div-cont2{
+ background-color: #FBE6A4;
+}
+
+.div-cont3{
+ background-color: #C6E2BE;
+}
+
+.div-cont4{
+ background-color: #94CBF0;
+}
+
+/* LOGIN */
+
+.header-login{
+    text-align: center;
+}
+
+.login{
+    background-color: orange;
+    height: 100vh;
+}
+
+.login .div-conjuntoForm{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login .div-imagem{
+    text-align: center;
+}
+
+.login .div-imagem img{
+    width: 40%;
+}
+
+.login .div-form{
+    width: 25%;
+}
+
+.login .form-login{
+    margin-top: 0;
+}
+
+.login .form-login input{
+    border: 1px solid #fff;
+    border-radius: 50px;
+    height: 40px;
+}
+
+.login .form-login input[type=email], .login .form-login input[type=password]{
+    text-indent: 10px;
+}
+
+.login .form-login input[type=submit]{
+    margin: 0;
+}
+
+.login .div-form span{
+    display: block;
+    margin: 10px 30px 0;
+    color: #f00025;
+    line-height: 5px;
+}
+
+.login .footer-login{
+    margin: 20px;
+}
+
+.login .footer-login a{
+    display: block;
+    line-height: 5px;
+    transition-duration: 0.3s;
+}
+
+.login .footer-login a:hover{
+    opacity: 0.6;
+    text-decoration: underline;
+}
+
+/* DOE PARA ONG */
+
+.doe-ong{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.div-capa-ong{
+    background-image: url(../imagens/fotos/15.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    padding: 100px 250px;
+}
+
+.h2-capa-ong{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.p-capa-ong{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    color: white;
+    margin-top: 0;
+}
+
+.div-tutorial, .div-englob-ong{
+    width: 50%;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.h3-cont{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    background-color: #555555;
+    border-radius: 0 0 5px 5px;
+}
+
+.div-conteiner-passo, .div-conteiner-ong{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.div-passo1{
+    width: 33%;
+    padding: 15px;
+    text-align: center;
+}
+
+.div-passo1 img{
+    width: 75%;
+}
+
+.div-ong{
+    width: 25%;
+    padding: 15px;
+}
+
+.div-ong img{
+    width: 100%;
+}
+
+.div-englob-ong{
+    width: 50%;
+    padding: 15px
+}
+
+.div-sobre-ong{
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.cont-ong{
+    padding: 15px;
+}
+
+.p-inf-ong{
+    padding: 5px 0 15px; 
+}
+
+.ajd-ong {
+    width: 100%;
+    height: 30px;
+    margin-bottom: 3%;
+    background-color: orange;
+    border-radius: 0px 0px 5px 5px;
+    border: none;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.ajd-ong-doar{
+    width: 25%; 
+}

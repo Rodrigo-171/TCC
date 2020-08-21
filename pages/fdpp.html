@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html id="doa-ong"lang="pt-br">
+<head>
+    <title>Forma de pagamento</title>
+    <meta charset=UTF-8>
+    <meta name=author content="">
+    <meta name=description content="">
+    <meta name=keywords content="">
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+
+    <link rel=stylesheet href="css/normalize.css">
+    <link rel=stylesheet href="css/default.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <link rel=stylesheet media="screen and (max-width:480px)" href="css/estilo-480px.css">
+    <link rel=stylesheet media="screen and (min-width: 481px) and (max-width:839px) " href="css/estilo-839px.css">
+    <link rel=stylesheet media="screen and (min-width: 840px) and (max-width:1024px) " href="css/estilo-1024px.css">
+    <link rel=stylesheet media="screen and (min-width: 1025px)" href="css/estilo-1025px.css">
+
+    <script src="https://kit.fontawesome.com/cb8f82ad0c.js" crossorigin="anonymous"></script>
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-58087941-1', 'auto');
+        ga('send', 'pageview');
+        ga('send', 'event', 'labs', 'menu-full');
+
+        jQuery(window).scroll(function() {
+            jQuery(".block-teste").hide();
+            setTimeout(function(){
+                jQuery(".block-teste").stop(true, true).show();
+            }, 1000);
+        });
+    </script>
+</head>
+<body class="pag-fdp">
+    <!--topo-->
+    <header>
+        <div class="div-home">
+            <h1 class="h1-home">NetworkPet's</h1>
+        </div>
+    </header>
+
+    <!--resto-->
+    <h4 class="h4-fdp">Escolha a forma de pagamento</h4>
+
+    <div class="fdp">  
+    <button onclick="window.location.href='cartao'" class="button-fdp"><i class="far fa-credit-card"></i><span class="span-fdp">Cartão de crédito</span></button>
+    <button onclick="window.location.href='boleto'" class="button-fdp"><i class="fas fa-barcode"></i><span class="span-fdp">Boleto bancário</span></button>
+    </div> 
+
+    <!-- Menu Hamburguer -->
+    <!-- <div class="block-teste">
+        <input class="input-home" id="navbar" type='checkbox'>
+        <label for="navbar">
+            <div class='menu'>
+                <span class='hamburger'></span>
+            </div>
+        </label>
+
+        <ul class="menu-ul">
+            <li><a href='home.html'>Home</a></li>
+            <li><a href='#'>Adote um Pet</a></li>
+            <li><a href='#'>Compre um Pet</a></li>
+            <li><a href='#'>Namoro Pet</a></li>
+            <li><a href='#'>Cadastre um Pet</a></li>
+            <li><a href='#'>Doe para ONG's</a></li>
+            <li><a href='#'>Pet's cadastrados</a></li>
+            <li><a href='#'>Perfil</a></li>
+        </ul>
+    </div> -->
+
+    <!-- RODAPE -->
+    <footer class="footer-fdp">
+        <div class="conteiner">
+            <div class="esq-fdp">
+                <ul>
+                    <li><a href="#">Sobre nós</a></li>
+                    <li><a href="#">Contato</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                    <li><a href="#">Politica e privacidade</a></li>
+
+                </ul>
+            </div>
+            <div class="dir-fdp">
+                <ul>
+                    <li>Redes Sociais</li>
+                    <li><a href="#"><img src=""></a></li>
+                    <li><a href="#"><img src=""></a></li>
+                    <li><a href="#"><img src=""></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <div class="barra-fdp"></div>
+</body>
+</html>

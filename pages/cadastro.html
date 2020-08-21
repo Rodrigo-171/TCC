@@ -1,0 +1,69 @@
+
+<div class="body-x">
+    <header class="header-cadas">
+        <img class="logo2" src="./imagens/LOGO/logo-net-branca.gif">
+        <h1 class="h1-cadas">Criar uma nova conta</h1>
+        <h2>Crie sua conta preenchendo as informações abaixo</h2>
+    </header>
+
+    <div class="div-register">
+        <form class="form-cadas"action="./php/action_page.php" method="post">
+            <ul>
+                <li class="dois">
+                    <input type="text" id="fname" name="fname" placeholder="Nome" >
+                    <input type="text" id="lname" name="lname" placeholder="Sobrenome" >
+                </li>
+                <li class="um">
+                    <input type="email" id="email" name="email" placeholder="E-mail" >
+                    <input type="password" id="password" name="password" placeholder="Senha" >
+                </li>
+                <li class="dois">
+                    <select class="estados" name="estado">
+                    <option value="">Estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espirito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                    </select>
+                    <input class="register" type="text" id="city" name="city" placeholder="Cidade" >
+                </li>
+                <li class="um">
+                    <input class="register" type="text" id="cellphone" name="cellphone" placeholder="Celular" >
+                </li>
+                <li class="dois">
+                    <input class="register" type="date" id="birthday" name="birthday" placeholder="Data de Nascimento">
+
+                    <select class="gen" name="gen">
+                        <option value="">Masculino</option>
+                        <option value="AC">Feminino</option>
+                        <option value="AL">Outro</option>
+                    </select>
+                </li>
+                <input class="cadastrar" type="submit" value="Cadastrar">
+            </ul>
+        </form> 
+    </div>
+</div>

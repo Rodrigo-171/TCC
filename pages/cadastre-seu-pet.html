@@ -1,0 +1,94 @@
+<div class="cadastroPet">
+    <header>
+        <div class="div-home">
+            <h1 class="h1-home">NetworkPet's</h1>
+        </div>
+    </header>
+
+    <!-- CONTEUDO-->
+    <form action="./php/cadastrar-pet.php" id="cadastroPet" method="POST">
+        <div id="passo">
+            <div id="passo-1" class="div-cadastro passo-ativo">
+                <div class="div-cadastro-titulo">
+                    <h2 class="h2-cadastro">Olá (user), qual a espécie do seu pet?</h2>
+                </div>
+                <div class="div-cadastro-opcao">
+                    <button type="button" class="botao-pet" onclick="selecionarPet(this, 'cachorro')">
+                        <img class="img-pets" src="imagens/cachorro/cachorro.gif">
+                        <h3 class="h3-pets">Cachorro</h3>
+                    </button>
+                    <input type="radio" name="especie" class="radio-especie" value="cachorro">
+                </div>
+                <div class="div-cadastro-opcao" >
+                    <button type="button" class="botao-pet" onclick="selecionarPet(this, 'gato')">
+                        <img class="img-pets" src="imagens/gato/gato.gif">
+                        <h3 class="h3-pets">Gato</h3>
+                    </button>
+                    <input type="radio" name="especie" class="radio-especie" value="gato">
+                </div>
+                <div class="div-cadastro-opcao">
+                    <button type="button" class="botao-pet" onclick="selecionarPet(this, 'coelho')">
+                        <img class="img-pets" src="imagens/coelho/coelho.gif">
+                        <h3 class="h3-pets">Coelho</h3>
+                    </button>
+                    <input type="radio" name="especie" class="radio-especie" value="coelho">
+                </div>
+                <div class="div-cadastro-opcao">
+                    <button type="button" class="botao-pet" onclick="selecionarPet(this, 'roedor')">
+                        <img class="img-pets" src="imagens/roedor/roedor.gif">
+                        <h3 class="h3-pets">Roedor</h3>
+                    </button>
+                    <input type="radio" name="especie" class="radio-especie" value="roedor">
+                </div>
+            </div>
+
+            <div id="passo-2" class="div-cadastro depois"></div>
+
+            <div id="passo-3" class="div-cadastro depois">
+                <div class="div-cadastro-titulo">
+                    <h2 class="h2-cadastro">Qual o nome do animal?</h2>
+                </div>
+                <div class="div-cadastro-opcao">
+                    <input type="text" name="nomeAnimal">
+                </div>
+            </div>
+
+            <div id="passo-4" class="div-cadastro depois">
+                <div class="div-cadastro-titulo">
+                    <h2 class="h2-cadastro">Nascimento do Animal</h2>
+                </div>
+                <div class="div-cadastro-opcao">
+                    <input type="text" name="nascimentoAnimal">
+                </div>
+            </div>
+        </div>
+        <div class="div-cadastro-botao">
+            <button type="button" id="botao-passo1" onclick="mudarPasso(2)">Proximo</button>
+            <button type="button" id="botao-passo2" onclick="mudarPasso(3)">Proximo</button>
+            <button type="button" id="botao-passo3" onclick="mudarPasso(4)">Proximo</button>
+            <button type="submit" id="botao-salvar">Salvar</button>
+        </div>
+    </form>
+
+
+    <!-- Menu Hamburguer -->
+    <!-- <div class="block-teste">
+        <input class="input-home" id="navbar" type='checkbox'>
+        <label for="navbar">
+            <div class='menu'>
+                <span class='hamburger'></span>
+            </div>
+        </label>
+
+        <ul class="menu-ul">
+            <li><a href='home.html'>Home</a></li>
+            <li><a href='#'>Adote um Pet</a></li>
+            <li><a href='#'>Compre um Pet</a></li>
+            <li><a href='#'>Namoro Pet</a></li>
+            <li><a href='#'>Cadastre um Pet</a></li>
+            <li><a href='#'>Doe para ONG's</a></li>
+            <li><a href='#'>Pet's cadastrados</a></li>
+            <li><a href='#'>Perfil</a></li>
+        </ul>
+    </div> -->
+</div>
