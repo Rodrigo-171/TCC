@@ -11,7 +11,7 @@
 <div>
     <form class="form-login"action="./php/action_page.php" method="POST">
         <input class="inp-login" type="text" id="fname" name="fname" placeholder="E-mail" ><br><br>
-        <input class="inp-login" type="text" id="lname" name="lname" placeholder="Senha" ><br><br>
+        <input class="inp-login" type="password" id="lname" name="lname" placeholder="Senha" ><br><br>
         <input class="entrar" type="submit" value="Entrar">
         </form> 
 </div>

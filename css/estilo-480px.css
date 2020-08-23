@@ -210,28 +210,44 @@ body{
 /*conteudo*/
 
 .div-cont{
-    width: 100%;
-    margin-top: 30px;
-    display: inline-flex;
-    background-color: #92B9C5;
+    width: 95%;
+    margin: 30px auto;
+    display: block;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 15px;
+    padding: 5px;
+    
 }
 
 .div-cont2{
-    width: 100%;
-    display: inline-flex;
-    background-color: #FBE6A4;
+    width: 95%;
+    margin: 30px auto;
+    display: block;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .div-cont3{
-    width: 100%;
-    display: inline-flex;
-    background-color: #C6E2BE;
+    width: 95%;
+    margin: 30px auto;
+    display: block;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .div-cont4{
-    width: 100%;
-    display: inline-flex;
-    background-color: #94CBF0;
+    width: 95%;
+    margin: 30px auto;
+    display: block;
+    border-style: solid;
+    border-color: whitesmoke;
+    border-radius: 15px;
+    padding: 5px;
 }
 
 .h2-cont{
@@ -239,8 +255,8 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
     font-weight: bold;
-    margin-top: 15%;
     text-align: center;
+    color: #555555;
 }
 
 .div-text{
@@ -248,21 +264,22 @@ body{
     font-size: 18px;
     font-weight: normal;
     text-align: center;
-    margin-top: -15%;
-    color: white;
+    color: #555555;
+    
    
 }
 
 .div-grid{
     width: 100%;
-    padding: 10px;
-    display: grid;
+    margin: auto;
+    text-align: center;
+    
 }
 
 .img-home{
-    width: 45vw;
-    
+    width: 80vw;
 }
+
 
 /*menu Hamburger*/
     .block-teste{

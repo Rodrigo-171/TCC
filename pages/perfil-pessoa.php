@@ -12,6 +12,7 @@
 
     <div class="button-perfil">
         <input class="bottom-TE" type="submit" value="Trocar foto">
+        <a href="php/deslogar.php" class="bottom-TE">Sair</a>
         <input class="bottom-TE" type="submit" value="Excluir perfil">
     </div>
 
