@@ -7,18 +7,32 @@
     </header>
 
     <div class="div-register">
-        <form class="form-cadas"action="./php/action_page.php" method="post">
+        <form class="form-cadas"action="./php/cadastrar.php" method="post">
             <ul>
                 <li class="dois">
-                    <input type="text" id="fname" name="fname" placeholder="Nome" >
-                    <input type="text" id="lname" name="lname" placeholder="Sobrenome" >
+                    <input type="text" id="fname" name="fname" placeholder="Nome Completo" >
                 </li>
                 <li class="um">
                     <input type="email" id="email" name="email" placeholder="E-mail" >
                     <input type="password" id="password" name="password" placeholder="Senha" >
                 </li>
+
                 <li class="dois">
-                    <select class="estados" name="estado">
+                    <input type="cep" id="cep" name="cep" placeholder="CEP" >
+                    <input type="bairro" id="bairro" name="bairro" placeholder="Bairro" >
+                </li>
+
+                <li class="dois">
+                    <input type="rua" id="rua" name="rua" placeholder="Rua" >
+                    <input type="num" id="num" name="num" placeholder="Numero" >
+                </li>
+
+                <li class="um">
+                    <input class="register" type="text" id="compl" name="compl" placeholder="Complemento" >
+                </li>
+
+                <li class="dois">
+                    <select id="estado" class="estados" name="estado">
                     <option value="">Estado</option>
                     <option value="AC">Acre</option>
                     <option value="AL">Alagoas</option>
@@ -57,9 +71,9 @@
                     <input class="register" type="date" id="birthday" name="birthday" placeholder="Data de Nascimento">
 
                     <select class="gen" name="gen">
-                        <option value="">Masculino</option>
-                        <option value="AC">Feminino</option>
-                        <option value="AL">Outro</option>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                        <option value="O">Outro</option>
                     </select>
                 </li>
                 <input class="cadastrar" type="submit" value="Cadastrar">

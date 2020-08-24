@@ -1,7 +1,7 @@
 <?php
 
 #ip do banco de dados do mysql
-define('HOST', '127.0.0.1:3306');
+define('HOST', '127.0.0.1:3307');
 #vai ter o usuário no banco de dados
 define('USUARIO', 'root');
 #vai armazenar a senha do banco de dados

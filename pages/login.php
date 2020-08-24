@@ -31,7 +31,7 @@ unset($_SESSION['nao_autenticado']);
 </div>
 
 <footer class="footer-login">
-    <a class="link-cadastrase" href="link">Cadastra-se no NetworkPet's</a><br>
+    <a class="link-cadastrase" href="cadastro">Cadastra-se no NetworkPet's</a><br>
     <a class="link-esq-senha"href="link">Esqueceu a senha?</a>
 </footer>
 </div>

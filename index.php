@@ -88,7 +88,7 @@
                 require('./pages/home.html');
                 break;
             case 'cadastro':
-                require('./pages/cadastro.html');
+                require('./pages/cadastro.php');
                 break;
             case 'adote-um-pet':
                 require('./pages/adote.html');
@@ -155,18 +155,18 @@
         </label>
 
         <ul class="menu-ul">
-            <li><a href='home'>Home</a></li>
-            <li><a href='adote-um-pet'>Adote um Pet</a></li>
-            <li><a href='compre-um-pet'>Compre um Pet</a></li>
-            <li><a href='namoro-pet'>Namoro Pet</a></li>
-            <li><a href='doacao-ong'>Doe para ONG's</a></li>
+            <li class="li-menu"><a class="a-menu" href='home'>Home</a></li>
+            <li class="li-menu"><a class="a-menu"href='adote-um-pet'>Adote um Pet</a></li>
+            <li class="li-menu"><a class="a-menu" href='compre-um-pet'>Compre um Pet</a></li>
+            <li class="li-menu"><a class="a-menu" href='namoro-pet'>Namoro Pet</a></li>
+            <li class="li-menu"><a class="a-menu" href='doacao-ong'>Doe para ONG's</a></li>
             <!-- Aqui ele verifica se tem alguem logado ou não, quando for para valer retirar o "|| true" -->
             <?php if(isset($_SESSION['user_logado'])){ ?>
-                <li><a href='cadastre-seu-pet'>Cadastre um Pet</a></li>
-                <li><a href='pets-cadastrado'>Pet's cadastrados</a></li>
-                <li><a href='perfil-pessoa'>Perfil</a></li>
+                <li class="li-menu"><a class="a-menu" href='cadastre-seu-pet'>Cadastre um Pet</a></li>
+                <li class="li-menu"><a class="a-menu" href='pets-cadastrado'>Pet's cadastrados</a></li>
+                <li class="li-menu"><a class="a-menu" href='perfil-pessoa'>Perfil</a></li>
             <?php }else{ ?>
-                <li><a href='login'>Logar</a></li>
+                <li class="li-menu"><a class="a-menu" href='login'>Logar</a></li>
             <?php } ?>
         </ul>
     </div>
@@ -207,10 +207,67 @@
                     `;
                     break;
                 case 'gato':
+                    opcoes = `
+                        <div class="div-cadastro-titulo">
+                            <h2 class="h2-cadastro">Qual o sexo do animal?</h2>
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarSexo(this, 'gato')">
+                                <img class="img-pets" src="imagens/gato/gato_genero_macho.gif">
+                                <h3 class="h3-pets">Macho</h3>
+                            </button>
+                            <input type="radio" name="sexo" class="radio-especie" value="M">
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarSexo(this, 'cachorro')">
+                                <img class="img-pets" src="imagens/gato/gato_genero_femea.gif">
+                                <h3 class="h3-pets">Fêmea</h3>
+                            </button>
+                            <input type="radio" name="sexo" class="radio-especie" value="F">
+                        </div>
+                    `;
                     break;
                 case 'coelho':
+                    opcoes = `
+                        <div class="div-cadastro-titulo">
+                            <h2 class="h2-cadastro">Qual o sexo do animal?</h2>
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarSexo(this, 'coelho')">
+                                <img class="img-pets" src="imagens/coelho/coelho_genero_macho.gif">
+                                <h3 class="h3-pets">Macho</h3>
+                            </button>
+                            <input type="radio" name="sexo" class="radio-especie" value="M">
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarSexo(this, 'cachorro')">
+                                <img class="img-pets" src="imagens/coelho/coelho_genero_femea.gif">
+                                <h3 class="h3-pets">Fêmea</h3>
+                            </button>
+                            <input type="radio" name="sexo" class="radio-especie" value="F">
+                        </div>
+                    `;
                     break;
                 case 'roedor':
+                    opcoes = `
+                        <div class="div-cadastro-titulo">
+                            <h2 class="h2-cadastro">Qual o sexo do animal?</h2>
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarSexo(this, 'roedor')">
+                                <img class="img-pets" src="imagens/roedor/roedor_genero_macho.gif">
+                                <h3 class="h3-pets">Macho</h3>
+                            </button>
+                            <input type="radio" name="sexo" class="radio-especie" value="M">
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarSexo(this, 'cachorro')">
+                                <img class="img-pets" src="imagens/roedor/roedor_genero_femea.gif">
+                                <h3 class="h3-pets">Fêmea</h3>
+                            </button>
+                            <input type="radio" name="sexo" class="radio-especie" value="F">
+                        </div>
+                    `;
                     break;
             }
 
@@ -262,5 +319,29 @@
         }
        
     </script>
+
+    <!-- cadastro -->
+    <script>
+    $('input[name=cep]').change(function(){
+    var cep  = $(this).val();
+    cep = cep.replace("-", "");
+    $.ajax({
+        url: `https://viacep.com.br/ws/${cep}/json`,
+        dataType : "json",
+        success: function(resposta){
+            console.log(resposta);
+
+            $("#city").val(resposta.localidade);
+            $("#estado").val(resposta.uf);
+            $("#bairro").val(resposta.bairro);
+            $("#rua").val(resposta.logradouro);
+            $("#complemento").val(resposta.complemento);
+        },
+        error : function(erro){
+            console.log(erro);
+        }
+    })
+});
+</script>
 </body>
 </html>
