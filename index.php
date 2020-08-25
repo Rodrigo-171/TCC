@@ -3,6 +3,8 @@
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
     $page = $url[3]; // pega a que página a pessoa acessou, na sua maquina ai vai ser outro index provavelmente o index 2
+    var_dump($page);
+    die;
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {
