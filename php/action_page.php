@@ -6,7 +6,7 @@ include('conexao.php');
 /*Se o campo estiver vindo por post usuário for vazio, ou o campo que estiver vindo por post
 chamado senha também for vazio,irá redirecionar de volta para o inicio*/
 if(empty($_POST['fname']) || empty($_POST['lname'])) {
-    header('Location: login.php');
+    header('Location: ../login');
     exit();
 }
 
