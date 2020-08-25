@@ -6,11 +6,10 @@
 <div class="body-x">
 <header class="header-login">
     <h1 class="h1-login">NetworkPet's</h1>
-</header>
-
-<div class="div-imagem">
+    <div class="div-imagem">
     <img class="logo" src="imagens/LOGO/logo_branca.gif">
-</div>
+    </div>
+</header>
 
 <div>
     <form class="form-login"action="./php/action_page.php" method="POST">
