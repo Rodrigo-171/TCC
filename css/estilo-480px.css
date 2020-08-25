@@ -410,6 +410,15 @@ body{
         font-size: 25gitpx;
     }
 
+    ::-webkit-scrollbar{
+        width: 5px;
+      }
+    
+      ::-webkit-scrollbar-thumb {
+        border-radius: 4px;
+        background: orange;
+      }
+
 /*------------------ DOAÇÃO PARA ONGS ------------------*/
 
 #doa-ong{
