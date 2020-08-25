@@ -6,9 +6,6 @@
 <div class="body-x">
 <header class="header-login">
     <h1 class="h1-login">NetworkPet's</h1>
-    <div class="div-imagem">
-    <img class="logo" src="imagens/LOGO/logo_branca.gif">
-    </div>
 </header>
 
 <div>

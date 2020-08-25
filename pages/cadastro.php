@@ -1,7 +1,7 @@
 
 <div class="body-x">
     <header class="header-cadas">
-        <img class="logo2" src="./imagens/LOGO/logo-net-branca.gif">
+        <!--<img class="logo2" src="./imagens/LOGO/logo-net-branca.gif">-->
         <h1 class="h1-cadas">Criar uma nova conta</h1>
         <h2>Crie sua conta preenchendo as informações abaixo</h2>
     </header>
