@@ -343,5 +343,9 @@
     })
 });
 </script>
+
+<script>
+    app.listen(process.env.PORT || 3000);
+</script>
 </body>
 </html>
