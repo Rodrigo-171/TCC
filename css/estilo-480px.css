@@ -1,3 +1,6 @@
+html{
+    width: 100%;
+}
 .body-x{
     background-image: radial-gradient(circle, orange, #f8b53a, rgb(255, 136, 0));
     width: 100%;
