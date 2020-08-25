@@ -26,9 +26,9 @@ if(isset($_SESSION['nao_autenticado'])):
 endif;
 unset($_SESSION['nao_autenticado']);
 ?>
-<div class="div-imagem">
+<!--<div class="div-imagem">
     <img class="logo" src="imagens/LOGO/logo_branca.gif">
-</div>
+</div>-->
 
 <footer class="footer-login">
     <a class="link-cadastrase" href="cadastro">Cadastra-se no NetworkPet's</a><br>
