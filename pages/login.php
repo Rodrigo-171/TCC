@@ -8,6 +8,10 @@
     <h1 class="h1-login">NetworkPet's</h1>
 </header>
 
+<div class="div-imagem">
+    <img class="logo" src="imagens/LOGO/logo_branca.gif">
+</div>
+
 <div>
     <form class="form-login"action="./php/action_page.php" method="POST">
         <input class="inp-login" type="text" id="fname" name="fname" placeholder="E-mail" ><br><br>
