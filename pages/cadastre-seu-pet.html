@@ -44,28 +44,44 @@
 
             <div id="passo-2" class="div-cadastro depois"></div>
 
-            <div id="passo-3" class="div-cadastro depois">
+            <div id="passo-3" class="div-cadastro depois"></div>
+
+            <div id="passo-4" class="div-cadastro depois">
                 <div class="div-cadastro-titulo">
                     <h2 class="h2-cadastro">Qual o nome do animal?</h2>
+                    <img src="imagens/all-pet.png" class="img-cadastro">
                 </div>
                 <div class="div-cadastro-opcao">
                     <input type="text" name="nomeAnimal">
                 </div>
             </div>
 
-            <div id="passo-4" class="div-cadastro depois">
+            <div id="passo-5" class="div-cadastro depois">
                 <div class="div-cadastro-titulo">
                     <h2 class="h2-cadastro">Nascimento do Animal</h2>
+                    <img src="imagens/all-pet.png" class="img-cadastro">
                 </div>
                 <div class="div-cadastro-opcao">
-                    <input type="text" name="nascimentoAnimal">
+                    <input type="date" name="nascimentoAnimal">
                 </div>
+            </div>
+        </div>
+
+        <div id="passo-6" class="div-cadastro depois">
+            <div class="div-cadastro-titulo">
+                <h2 class="h2-cadastro">Qual o preço do animal?</h2>
+                <img src="imagens/all-pet.png" class="img-cadastro">
+            </div>
+            <div class="div-cadastro-opcao">
+                <input type="text" name="precoAnimal">
             </div>
         </div>
         <div class="div-cadastro-botao">
             <button type="button" id="botao-passo1" onclick="mudarPasso(2)">Proximo</button>
             <button type="button" id="botao-passo2" onclick="mudarPasso(3)">Proximo</button>
             <button type="button" id="botao-passo3" onclick="mudarPasso(4)">Proximo</button>
+            <button type="button" id="botao-passo4" onclick="mudarPasso(5)">Proximo</button>
+            <button type="button" id="botao-passo5" onclick="mudarPasso(6)">Proximo</button>
             <button type="submit" id="botao-salvar">Salvar</button>
         </div>
     </form>

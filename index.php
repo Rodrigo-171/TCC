@@ -2,8 +2,8 @@
 <?php
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
-    //$page = $url[3]; // URL Local
-    $page = $url[1]; // URL Online
+    $page = $url[2]; // URL Local
+    //$page = $url[1]; // URL Online
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {
@@ -311,6 +311,24 @@
                     document.getElementById("passo-4").classList.remove("depois");
                     document.getElementById("passo-4").classList.add("passo-ativo");
                     document.getElementById("botao-passo3").style.display = "none";
+                    document.getElementById("botao-passo4").style.display = "block";
+                    document.getElementById("passo").style.height = document.getElementById("passo-4").offsetHeight+'px';
+                    break;
+                case 5:
+                    document.getElementById("passo-4").classList.remove("passo-ativo");
+                    document.getElementById("passo-4").classList.add("antes");
+                    document.getElementById("passo-5").classList.remove("depois");
+                    document.getElementById("passo-5").classList.add("passo-ativo");
+                    document.getElementById("botao-passo4").style.display = "none";
+                    document.getElementById("botao-passo5").style.display = "block";
+                    document.getElementById("passo").style.height = document.getElementById("passo-4").offsetHeight+'px';
+                    break;
+                case 6:
+                    document.getElementById("passo-5").classList.remove("passo-ativo");
+                    document.getElementById("passo-5").classList.add("antes");
+                    document.getElementById("passo-6").classList.remove("depois");
+                    document.getElementById("passo-6").classList.add("passo-ativo");
+                    document.getElementById("botao-passo5").style.display = "none";
                     document.getElementById("botao-salvar").style.display = "block";
                     document.getElementById("passo").style.height = document.getElementById("passo-4").offsetHeight+'px';
                     break;
@@ -319,6 +337,117 @@
             }
         }
        
+    </script>
+
+    <script>
+        function selecionarSexo(botao, animal){
+            var botaoAtivo = document.getElementsByClassName("ativo");
+            if(botaoAtivo.length > 0){
+                botaoAtivo[0].classList.remove("ativo");
+            }
+            botao.classList.add("ativo");
+            botao.nextSibling.nextSibling.checked = true;
+            var opcoes;
+            switch (animal) {
+                case 'cachorro':
+                    opcoes = `
+                        <div class="div-cadastro-titulo">
+                            <h2 class="h2-cadastro">Qual a raça do animal?</h2>
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
+                                <img class="img-pets" src="imagens/cachorro/cachorro_genero_macho.gif">
+                                <h3 class="h3-pets">Macho</h3>
+                            </button>
+                            <input type="radio" name="raca" class="radio-especie" value="M">
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
+                                <img class="img-pets" src="imagens/cachorro/cachorro_genero_femea.gif">
+                                <h3 class="h3-pets">Fêmea</h3>
+                            </button>
+                            <input type="radio" name="raca" class="radio-especie" value="F">
+                        </div>
+                    `;
+                    break;
+                case 'gato':
+                    opcoes = `
+                        <div class="div-cadastro-titulo">
+                            <h2 class="h2-cadastro">Qual a raça do animal?</h2>
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'gato')">
+                                <img class="img-pets" src="imagens/gato/gato_genero_macho.gif">
+                                <h3 class="h3-pets">Macho</h3>
+                            </button>
+                            <input type="radio" name="raca" class="radio-especie" value="M">
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
+                                <img class="img-pets" src="imagens/gato/gato_genero_femea.gif">
+                                <h3 class="h3-pets">Fêmea</h3>
+                            </button>
+                            <input type="radio" name="raca" class="radio-especie" value="F">
+                        </div>
+                    `;
+                    break;
+                case 'coelho':
+                    opcoes = `
+                        <div class="div-cadastro-titulo">
+                            <h2 class="h2-cadastro">Qual a raça do animal?</h2>
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'coelho')">
+                                <img class="img-pets" src="imagens/coelho/coelho_genero_macho.gif">
+                                <h3 class="h3-pets">Macho</h3>
+                            </button>
+                            <input type="radio" name="raca" class="radio-especie" value="M">
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
+                                <img class="img-pets" src="imagens/coelho/coelho_genero_femea.gif">
+                                <h3 class="h3-pets">Fêmea</h3>
+                            </button>
+                            <input type="radio" name="raca" class="radio-especie" value="F">
+                        </div>
+                    `;
+                    break;
+                case 'roedor':
+                    opcoes = `
+                        <div class="div-cadastro-titulo">
+                            <h2 class="h2-cadastro">Qual a raça do animal?</h2>
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'roedor')">
+                                <img class="img-pets" src="imagens/roedor/roedor_genero_macho.gif">
+                                <h3 class="h3-pets">Macho</h3>
+                            </button>
+                            <input type="radio" name="raca" class="radio-especie" value="M">
+                        </div>
+                        <div class="div-cadastro-opcao">
+                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
+                                <img class="img-pets" src="imagens/roedor/roedor_genero_femea.gif">
+                                <h3 class="h3-pets">Fêmea</h3>
+                            </button>
+                            <input type="radio" name="raca" class="radio-especie" value="F">
+                        </div>
+                    `;
+                    break;
+            }
+
+            document.getElementById("passo-3").innerHTML = opcoes;
+        }
+
+        function selecionarRaca(botao, raca){
+            var botaoAtivo = document.getElementsByClassName("ativo");
+            if(botaoAtivo.length > 0){
+                botaoAtivo[0].classList.remove("ativo");
+            }
+            botao.classList.add("ativo");
+            botao.nextSibling.nextSibling.checked = true;
+            document.getElementById("passo-3").innerHTML = opcoes;
+        }
+
     </script>
 
     <!-- cadastro -->

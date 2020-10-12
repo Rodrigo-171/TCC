@@ -592,7 +592,7 @@ body{
     font-size: 25px;
     text-align: center;
     font-weight: bold;
-    color: orange;
+    color: #7b7b7b;
 }
 
 .img-pets{
@@ -602,12 +602,18 @@ body{
 .h3-pets{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    color: orange;
+    color: #7b7b7b;
     margin: 0;
 }
 
 .cadastroPet{
     background: #fff;
+}
+
+.img-cadastro{
+    width: 25em;
+    height: auto;
+    margin: 0 auto;
 }
 
 .div-cadastro{
@@ -630,7 +636,7 @@ body{
     left: 1000px;
 }
 
-#botao-passo2, #botao-passo3, #botao-salvar{
+#botao-passo2, #botao-passo3, #botao-passo4, #botao-passo5, #botao-salvar{
     display: none;
 }
 
@@ -638,6 +644,7 @@ body{
 .div-cadastro-titulo, .div-cadastro-botao{
     width: 100%;
     padding: 0 15px;
+    text-align: center;
 }
 
 .div-cadastro-botao{
@@ -651,7 +658,7 @@ body{
     height: 30px;
     border-radius: 50px;
     border: 1px solid #fff;
-    background-color: #f28c21;
+    background-color: #7b7b7b;
     color: #fff;
 }
 
@@ -667,6 +674,14 @@ body{
     border: none;
     background: none;
     cursor: pointer;
+}
+
+.div-cadastro-opcao input{
+    width: 100%;
+    height: 40px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color: #7b7b7b;
 }
 
 .div-cadastro-opcao > button.ativo{
