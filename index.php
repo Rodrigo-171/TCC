@@ -51,6 +51,7 @@
     <meta name=viewport content="width=device-width, initial-scale=1.0">
     <title><?php echo $titulo; ?></title>
 
+    <link rel="shortcut icon" href="imagens/cachorro/cachorro.gif">
     <link rel=stylesheet href="css/normalize.css">
     <link rel=stylesheet href="css/default.css">
     <link rel=stylesheet href="js/menuhamburguer.js">

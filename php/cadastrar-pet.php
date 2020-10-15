@@ -19,17 +19,5 @@ $resultEspecie = mysqli_query($conexao, $queryEspecie);
 $queryEspecie = "INSERT INTO `animal` (`raca`, `cod_status_raca`, `cod_especie`) VALUES ('$raca', 'R', '$cod_especie')";
 $resultEspecie = mysqli_query($conexao, $queryEspecie);
 
-if($resultAnimal){
-    $query_get_cod_animal = "SELECT LAST_INSERT_ID() as cod_animal;";
-    $result_get_cod_animal = mysqli_query($conexao, $query_get_cod_animal);
-    $row_cod_animal = mysqli_fetch_assoc($result_get_cod_animal);
-    $cod_animal = $row_cod_animal['cod_animal'];
-
-
-if($resultEspecie){
-    $query_get_cod_especie = "SELECT LAST_INSERT_ID() as cod_especie;";
-    $result_get_cod_especie = mysqli_query($conexao, $query_get_cod_especie);
-    $row_cod_especie = mysqli_fetch_assoc($result_get_cod_especie);
-    $cod_especie = $row_cod_especie['cod_especie'];
 ?>
 
