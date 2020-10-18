@@ -430,7 +430,7 @@ body{
         font-family: Arial, Helvetica, sans-serif;
         color: #fff;
         list-style: none;
-        font-size: 25gitpx;
+        font-size: 25px;
     }
 
     ::-webkit-scrollbar{
@@ -1161,7 +1161,7 @@ main{
 
 .li-perf{
     margin: 3% 3% auto;
-    width: 50%;
+    width: 100%;
 }
 
 .acc-container{
