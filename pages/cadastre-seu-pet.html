@@ -1,10 +1,7 @@
+<body class="bg-abstratact"> 
+    
 <div class="cadastroPet">
-    <header>
-        <div class="div-home">
-            <a class="a-header" href="home"><h1 class="h1-home">NetworkPet's</h1></a>
-        </div>
-    </header>
-
+    
     <!-- CONTEUDO-->
     <form action="./php/cadastrar-pet.php" id="cadastroPet" method="POST">
         <div id="passo">
@@ -52,7 +49,7 @@
                     <img src="imagens/all-pet.png" class="img-cadastro">
                 </div>
                 <div class="div-cadastro-opcao">
-                    <input type="text" name="nomeAnimal">
+                    <input type="text" placeholder="Nome" name="nomeAnimal">
                 </div>
             </div>
 
@@ -65,17 +62,21 @@
                     <input type="date" name="nascimentoAnimal">
                 </div>
             </div>
+
+            <div id="passo-6" class="div-cadastro depois">
+                <div class="div-cadastro-titulo">
+                    <h2 class="h2-cadastro">O animal é para Venda, Adoção ou Namoropet?</h2>
+                    <p onclick="show_hide()" class="button-default">Venda</p>
+                    <button class="button-default">Adoção</button>
+                    <button class="button-default">NamoroPet</button>
+                </div>
+                <div class="div-cadastro-opcao">
+                    <input id="preco-animal" type="text" name="precoAnimal" placeholder="Valor do animal">
+                </div>
+            </div>
         </div>
 
-        <div id="passo-6" class="div-cadastro depois">
-            <div class="div-cadastro-titulo">
-                <h2 class="h2-cadastro">Qual o preço do animal?</h2>
-                <img src="imagens/all-pet.png" class="img-cadastro">
-            </div>
-            <div class="div-cadastro-opcao">
-                <input type="text" name="precoAnimal">
-            </div>
-        </div>
+        
         <div class="div-cadastro-botao">
             <button type="button" id="botao-passo1" onclick="mudarPasso(2)">Proximo</button>
             <button type="button" id="botao-passo2" onclick="mudarPasso(3)">Proximo</button>
@@ -85,26 +86,6 @@
             <button type="submit" id="botao-salvar">Salvar</button>
         </div>
     </form>
-
-
-    <!-- Menu Hamburguer -->
-    <!-- <div class="block-teste">
-        <input class="input-home" id="navbar" type='checkbox'>
-        <label for="navbar">
-            <div class='menu'>
-                <span class='hamburger'></span>
-            </div>
-        </label>
-
-        <ul class="menu-ul">
-            <li><a href='home.html'>Home</a></li>
-            <li><a href='#'>Adote um Pet</a></li>
-            <li><a href='#'>Compre um Pet</a></li>
-            <li><a href='#'>Namoro Pet</a></li>
-            <li><a href='#'>Cadastre um Pet</a></li>
-            <li><a href='#'>Doe para ONG's</a></li>
-            <li><a href='#'>Pet's cadastrados</a></li>
-            <li><a href='#'>Perfil</a></li>
-        </ul>
-    </div> -->
+    
 </div>
+</body>

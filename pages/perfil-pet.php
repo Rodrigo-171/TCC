@@ -13,9 +13,6 @@
             <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>
         </div>
         <div>
-            <a href="php/deslogar.php"><i class="fas fa-sign-out-alt"></i><br>Sair</a>
-        </div>
-        <div>
             <a type="submit"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
         </div>
     </div>
@@ -49,43 +46,6 @@
             </ul>
             <hr>
             <a href="editar-perfil" class="link-edit">Editar dados</a>
-        </div>
-    </section>
-    <section class="acc-container">
-        <h2>Avaliação</h2>
-        <div class="avaliacao">
-            <img class="img-avaliacao" src="imagens/undraw/feedback.png" alt="ilustração do undraw">
-            <form method="POST" action="./php/processa.php" enctype="multipart/form-data">
-                <?php
-                    if(isset($_SESSION['msg'])){
-                    echo $_SESSION['msg']."<br><br>";
-                    unset($_SESSION['msg']);
-                    }
-                ?>
-            
-                <div class="estrelas">
-                    <input type="radio" id="vazio" name="estrela" value="" checked>
-
-                    <label for="estrela_um"><i class="fas fa-star"></i></label>
-                    <input type="radio" id="estrela_um" name="estrela" value="1">
-
-                    <label for="estrela_dois"><i class="fas fa-star"></i></label>
-                    <input type="radio" id="estrela_dois" name="estrela" value="2">
-
-                    <label for="estrela_tres"><i class="fas fa-star"></i></label>
-                    <input type="radio" id="estrela_tres" name="estrela" value="3">
-
-                    <label for="estrela_quatro"><i class="fas fa-star"></i></label>
-                    <input type="radio" id="estrela_quatro" name="estrela" value="4">
-
-                    <label for="estrela_cinco"><i class="fas fa-star"></i></label>
-                    <input type="radio" id="estrela_cinco" name="estrela" value="5"><br><br>
-
-                    <input class="button-default button-default-avaliar"type="submit" value="Avaliar">
-                    
-                </div>
-                
-            </form>
         </div>
     </section>
 </div>

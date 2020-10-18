@@ -1,5 +1,22 @@
-html{
+html, body{
     width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+    box-sizing: border-box;
+    letter-spacing: 0.02em;
+    color: #666;
+}
+
+p{
+    color: #666;
+    font-size: 1em;
 }
 .body-x{
     background-image: radial-gradient(circle, orange, #f8b53a, rgb(255, 136, 0));
@@ -111,6 +128,8 @@ select.gen {
     margin: 5px;
     width: 45%;
 }
+
+
 /*------------------------------------------------------CHECK-IN---------------------------------------------------------------*/
 .header-check{
     text-align: center;
@@ -480,7 +499,7 @@ body{
     font-weight: bold;
     text-align: center;
     color: #fff;
-    background-color: #555555;
+    background-color: #49bf9d;
     border-radius: 0 0 5px 5px;
 }
 .div-conteiner-passo{
@@ -560,25 +579,125 @@ body{
     font-weight: bold;
 }
 
-.div-sobre-ong{
+.bg-modal{
     width: 100%;
-    background-color: #94CBF0;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    position: fixed;
+    z-index:2;
+    top: -100%;
+    display: block;
+    transition: 350ms;
 }
 
-.logo-sobre-ong{
-    width: 30vw;
-    padding: 3%;
+.modal{
+    width: 80%;
+    height: 80%;
+    background-image: url(../imagens/BG/linha-abstrata.gif);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: white;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin: 80px auto 0 auto;
+    padding: 10px;
+    text-align: center;
 }
 
-.h3-nome-ong{
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+.modal span{
+    float: right;
+    font-size: 22px;
+    color: #000;
+    margin: 8px 15px;
+    transition: 350ms;
+    cursor: pointer;
 }
 
-.p-inf-ong{
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
+.modal span:hover{
+    color: #990000;
+    transition: 350ms;
+}
 
+.modal a{
+    width: 50%;
+    height: auto;
+    background-color: #49bf9d;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    padding: 0.8em;
+    position: bottom;
+    text-decoration: none;
+}
+
+.header-modal{
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.header-modal img{
+    width: 35vw;
+    height: auto;
+    margin: 0;
+}
+
+.header-modal h2{
+    color: #666;
+    font-size: 1.5em;
+    font-weight: bold;
+    top: 0;
+}
+
+.header-modal p{
+    color: #666;
+    font-size: 1em;
+    font-weight: normal;
+
+}
+.galeria{
+    overflow: hidden;
+    width: 100%;
+    height: 38%;
+    position: relative;
+    margin: auto;
+}
+
+.foto{
+    width: 80%;
+    height: 70%;
+    position: absolute;
+    border-radius: 20px;
+    opacity: 0;
+    animation: animacao 20s infinite;
+    margin: 3% 0% 0% -9em
+}
+
+.foto:nth-of-type(1){}
+
+.foto:nth-of-type(2){
+    animation-delay: 5s;
+}
+.foto:nth-of-type(3){
+    animation-delay: 10s;
+}
+.foto:nth-of-type(4){
+    animation-delay: 15s;
+}
+
+@keyframes animacao{
+    0%{
+        opacity: 0.1;
+    }
+    25%{
+        opacity: 1;
+         transform: scale(1.1,1.1);
+    }
+    50%{
+        opacity: 0.1;
+    }
 }
 /*----------------------------- CADASTRO PET ---------------------------------*/
 
@@ -607,13 +726,14 @@ body{
 }
 
 .cadastroPet{
-    background: #fff;
+    background: none;
 }
 
 .img-cadastro{
     width: 25em;
     height: auto;
     margin: 0 auto;
+    margin-top: -2em;
 }
 
 .div-cadastro{
@@ -658,7 +778,7 @@ body{
     height: 30px;
     border-radius: 50px;
     border: 1px solid #fff;
-    background-color: #7b7b7b;
+    background-color: #49bf9d;
     color: #fff;
 }
 
@@ -679,8 +799,10 @@ body{
 .div-cadastro-opcao input{
     width: 100%;
     height: 40px;
+    background-color: white;
     border-style: solid;
     border-radius: 15px;
+    padding: 5px;
     border-color: #7b7b7b;
 }
 
@@ -697,6 +819,48 @@ body{
 
 #passo input[type=radio]{
     display: none;
+}
+
+.select-raca{
+    background-color: #49bf9d;
+    border: 3px solid #49bf9d;
+    color: white;
+    padding: .75em 1.5em;
+    border-radius: 10px;
+    font-size: 0.9em;
+    display: inline-block;
+    width: auto;
+    transition: all .5s;
+    margin-top: 3em;
+}
+
+.button-default{
+    background-color: #49bf9d;
+    border: 3px solid #49bf9d;
+    color: white;
+    padding: .75em 1.5em;
+    border-radius: 5px;
+    font-size: 0.9em;
+    display: inline-block;
+    width: auto;
+    transition: all .5s;
+    cursor: pointer;
+    margin-top: 15%;
+    margin-left: 2%;
+    margin-right: 4%;
+}
+
+#preco-animal{
+    display: none;
+}
+
+.bg-abstratact{
+    background-image: url(../imagens/BG/abstract.png);
+    position: relative;
+    margin: 0;
+    
+    background-position: bottom left, center center;
+    background-repeat:no-repeat;
 }
 
 /*----------------------------- FORMA DE PAGAMENTO ---------------------------------*/
@@ -841,26 +1005,58 @@ li{
 }
 
 /*----------------------------- PERFIL DO PET E PESSOA---------------------------------*/
+main{
+    border: 1px solid transparent;
+    background-color: #91efd4;
+    height: 100%;
+    text-align: center;
+}
 
 .div-foto{
     display: block;
     text-align: center;
-    margin-top: 5%;
 }
-.foto-perfil{
-    width: 100px;
-    height: 100px;
-    border-radius: 150px;
-    border: solid;
-    border-color: #555555 ;
-    border-width: 2px;
-    margin: 0 auto;
+
+.div-foto div{
+    margin: 14% auto;
+    text-align: center;
+}
+
+.div-foto div img{
+    border-radius: 100%;
+    width: 130px;
+    height: 130px;
 }
 
 .button-perfil{
-    width: 100%;
-    display: inline-flex;
-    
+    padding: 30px 7%;
+    position: inherit;
+    margin: 0;
+    top: auto;
+    right: 0;
+    left: 0;
+    background-color: white;
+    border-radius: 0px 0px 20px 20px;
+    box-shadow: 0px 2px 7px #757575eb;
+    display: flex;
+    color: #393939;
+}
+
+.button-perfil div{
+    margin: auto;
+    text-align: center;
+}
+
+.button-perfil a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #666;
+}
+
+.button-perfil i{
+    font-size: 25px;
+    margin-bottom: 12px;
+    color: #666;
 }
 
 .bottom-TE {
@@ -879,33 +1075,67 @@ li{
 }
 
 .dados-perfil{
-    width: 95%;
+    display: inline-grid;
+    align-items: center;
+    margin: 0;
+    background: #ffffff;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     height: auto;
-    margin: 0% 2%;
-    
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    border-top: 5px solid #49bf9d;
+    padding: 20px;
+    text-align: center;
 }
+
+.dados-perfil hr{
+    margin: 20px 0 20px 0;
+    color: #c4c3c3;
+}
+
+.link-edit{
+    transition: color .2s linear, border .2s linear;
+    text-decoration: none;
+    border-bottom: 1px dotted;
+    cursor: pointer;
+    color: #666;
+}
+
+.link-edit:hover{
+    color: #49bf9d;
+}
+
 
 .text-perf{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
+    font-size: 0.8em;
     font-weight: bold;
-    color: orange;
+    color: #666;
     margin: auto;
 }
 
 .inp-perf{
     width: 95%;
     height: 25px;
-    margin: auto;
-    padding: 5px;
-    border-style: solid;
-    border-color: orange;
-    border-width: 1px;
+    margin: 5px 0;
+    padding: 0;
+    border: none;
+    color: #666;
+}
+
+.inp-perf2{
+    width: 95%;
+    height: 25px;
+    margin: 5px 0;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #666;
+    color: #666;
 }
 
 .ul-dados-perfil{
     margin: 0 auto;
-    display: inline-flex;
+    display: inline;
     text-align: left;
 }
 
@@ -924,10 +1154,62 @@ li{
     background-color: orange;
     color: white;
     margin: auto;
-    margin-top: 38%;
+    margin: 10% 5% 10% 5%;
 }
 
 .li-perf{
     margin: 3% 3% auto;
     width: 50%;
+}
+
+.acc-container{
+    padding: 0 30px;
+    max-width: 900px;
+    margin-top: 10%;
+}
+
+.acc-container h2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    color: #555;
+}
+
+/*------ perfil avaliação----------*/
+
+.avaliacao{
+    display: inline-grid;
+    align-items: center;
+    margin: 0;
+    background: #ffffff;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    height: auto;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    border-top: 5px solid #49bf9d;
+    padding: 20px;
+    text-align: center;
+}
+
+.img-avaliacao{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.fa-star{
+    font-size: 2em;
+}
+
+.estrelas input[type=radio]{
+	display: none;
+}.estrelas label i.fa-star:before{
+	content: '\f005';
+	color: #FC0;
+}.estrelas  input[type=radio]:checked  ~ label i.fa-star:before{
+	color: #CCC;
+}
+
+.button-default-avaliar{
+    margin: 0;
 }

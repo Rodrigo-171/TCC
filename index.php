@@ -35,6 +35,9 @@
         case 'login':
             $titulo = "Login";
             break;
+        case 'editar-perfil':
+            $titulo = "Editar Perfil";
+            break;
         default:
             $titulo = 'Home';
             break;
@@ -51,6 +54,7 @@
     <meta name=viewport content="width=device-width, initial-scale=1.0">
     <title><?php echo $titulo; ?></title>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="shortcut icon" href="imagens/cachorro/cachorro.gif">
     <link rel=stylesheet href="css/normalize.css">
     <link rel=stylesheet href="css/default.css">
@@ -132,7 +136,10 @@
                 require('./pages/perfil-pessoa.php');
                 break;
             case 'perfil-pet':
-                require('./pages/perfil-pet.html');
+                require('./pages/perfil-pet.php');
+                break;
+            case 'editar-perfil':
+                require('./pages/editar-perfil.php');
                 break;
             default:
                 require('./pages/erro404.html'); //Caso não ache a pagina cai na pagina de erro
@@ -356,81 +363,61 @@
                             <h2 class="h2-cadastro">Qual a raça do animal?</h2>
                         </div>
                         <div class="div-cadastro-opcao">
-                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
-                                <img class="img-pets" src="imagens/cachorro/cachorro_genero_macho.gif">
-                                <h3 class="h3-pets">Macho</h3>
-                            </button>
-                            <input type="radio" name="raca" class="radio-especie" value="M">
-                        </div>
-                        <div class="div-cadastro-opcao">
-                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
-                                <img class="img-pets" src="imagens/cachorro/cachorro_genero_femea.gif">
-                                <h3 class="h3-pets">Fêmea</h3>
-                            </button>
-                            <input type="radio" name="raca" class="radio-especie" value="F">
+                            <img class="img-pets" src="imagens/cachorro/cachorro.gif">
+                            <select class="select-raca">
+                                <option value="VL">Raça</option>
+                                <option value="VL">Vira Lata</option>
+                                <option value="PB">Pitbull</option>
+                                <option value="PC">Pincher</option>
+                            </select>
                         </div>
                     `;
                     break;
                 case 'gato':
                     opcoes = `
-                        <div class="div-cadastro-titulo">
+                    <div class="div-cadastro-titulo">
                             <h2 class="h2-cadastro">Qual a raça do animal?</h2>
                         </div>
                         <div class="div-cadastro-opcao">
-                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'gato')">
-                                <img class="img-pets" src="imagens/gato/gato_genero_macho.gif">
-                                <h3 class="h3-pets">Macho</h3>
-                            </button>
-                            <input type="radio" name="raca" class="radio-especie" value="M">
-                        </div>
-                        <div class="div-cadastro-opcao">
-                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
-                                <img class="img-pets" src="imagens/gato/gato_genero_femea.gif">
-                                <h3 class="h3-pets">Fêmea</h3>
-                            </button>
-                            <input type="radio" name="raca" class="radio-especie" value="F">
+                            <img class="img-pets" src="imagens/gato/gato.gif">
+                            <select class="select-raca">
+                                <option value="VL">Raça</option>
+                                <option value="VL">Vira Lata</option>
+                                <option value="PB">Pitbull</option>
+                                <option value="PC">Pincher</option>
+                            </select>
                         </div>
                     `;
                     break;
                 case 'coelho':
                     opcoes = `
-                        <div class="div-cadastro-titulo">
+                    <div class="div-cadastro-titulo">
                             <h2 class="h2-cadastro">Qual a raça do animal?</h2>
                         </div>
                         <div class="div-cadastro-opcao">
-                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'coelho')">
-                                <img class="img-pets" src="imagens/coelho/coelho_genero_macho.gif">
-                                <h3 class="h3-pets">Macho</h3>
-                            </button>
-                            <input type="radio" name="raca" class="radio-especie" value="M">
-                        </div>
-                        <div class="div-cadastro-opcao">
-                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
-                                <img class="img-pets" src="imagens/coelho/coelho_genero_femea.gif">
-                                <h3 class="h3-pets">Fêmea</h3>
-                            </button>
-                            <input type="radio" name="raca" class="radio-especie" value="F">
+                            <img class="img-pets" src="imagens/coelho/coelho.gif">
+                            <select class="select-raca">
+                                <option value="VL">Raça</option>
+                                <option value="VL">Vira Lata</option>
+                                <option value="PB">Pitbull</option>
+                                <option value="PC">Pincher</option>
+                            </select>
                         </div>
                     `;
                     break;
                 case 'roedor':
                     opcoes = `
-                        <div class="div-cadastro-titulo">
+                    <div class="div-cadastro-titulo">
                             <h2 class="h2-cadastro">Qual a raça do animal?</h2>
                         </div>
                         <div class="div-cadastro-opcao">
-                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'roedor')">
-                                <img class="img-pets" src="imagens/roedor/roedor_genero_macho.gif">
-                                <h3 class="h3-pets">Macho</h3>
-                            </button>
-                            <input type="radio" name="raca" class="radio-especie" value="M">
-                        </div>
-                        <div class="div-cadastro-opcao">
-                            <button type="button" class="botao-pet" onclick="selecionarRaca(this, 'cachorro')">
-                                <img class="img-pets" src="imagens/roedor/roedor_genero_femea.gif">
-                                <h3 class="h3-pets">Fêmea</h3>
-                            </button>
-                            <input type="radio" name="raca" class="radio-especie" value="F">
+                            <img class="img-pets" src="imagens/roedor/roedor.gif">
+                            <select class="select-raca">
+                                <option value="VL">Raça</option>
+                                <option value="VL">Vira Lata</option>
+                                <option value="PB">Pitbull</option>
+                                <option value="PC">Pincher</option>
+                            </select>
                         </div>
                     `;
                     break;
@@ -449,6 +436,27 @@
             document.getElementById("passo-3").innerHTML = opcoes;
         }
 
+    </script>
+
+    <!-- Preco animal show hide-->
+
+    <script>
+        var a;
+            function show_hide()
+            {
+
+                if(a==1)
+                    {
+                        document.getElementById("preco-animal").style.display="inline";
+                        return a=0;
+                    }
+
+                else
+                    {
+                        document.getElementById("preco-animal").style.display="none";
+                        return a=1;
+                    }
+            }
     </script>
 
     <!-- cadastro -->
@@ -477,6 +485,17 @@
 
 <script>
     app.listen(process.env.PORT || 3000);
+</script>
+
+<!-- ABRIR E FECHAR MODAL PAGINA DA ONG -->
+
+<script  type="text/javascript">
+    function abrirModal() {
+        document.getElementById('modal').style.top = "0";
+    }
+    function fecharModal() {
+        document.getElementById('modal').style.top="-100%";
+    }
 </script>
 </body>
 </html>

@@ -1,81 +1,83 @@
-<header>
-    <div class="div-home">
-        <a class="a-header" href="home"><h1 class="h1-home">NetworkPet's</h1></a>
-    </div>
-</header>
-<div class="doe-ong">
+
     <!-- CAPA -->
-    <div class="div-capa-ong">
-        <div class="div-capa-img">
-            <div class="div-text-capa">
-                <h2 class="h2-capa-ong">Ajude uma ONG</h1>
-                <p class="p-capa-ong">Nesta página, você pode realizar doações para nossas ONGs parceiras. Escolha a sua preferida, selecione a quantia de dinheiro que deseja enviar para a 
-                instituição, faça o pagamento e pronto! Lembrando que 5% da doação é para o nosso site.</p>
+    <header>
+        <div class="div-capa-ong">
+            <div class="div-capa-img">
+                <div class="div-text-capa">
+                    <h2 class="h2-capa-ong">Ajude uma ONG</h1>
+                    <p class="p-capa-ong">Nesta página, você pode realizar doações para nossas ONGs parceiras. Escolha a sua preferida, selecione a quantia de dinheiro que deseja enviar para a 
+                    instituição, faça o pagamento e pronto! Lembrando que 5% da doação é para o nosso site.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
     <!-- CONTEUDO -->
 
-    <div class="div-tutorial">
-        <h3 class="h3-cont">Como doar?</h3>
-        <div class="div-conteiner-passo">
-            <div class="div-passo1">
-                <h4 class="h4-passo1">Escolha uma ong</h4>
-                <img class="icons" src="imagens/icons/casa2.gif">
-            </div>
-
-            <div class="div-passo1">
-                <h4 class="h4-passo3">Escolha a forma de pagamento</h4>
-                <img class="icons" src="imagens/icons/conta-bancaria.gif">
-            </div>
-
-            <div class="div-passo1">
-                <h4 class="h4-passo2">Coloque a doação</h4>
-                <img class="icons" src="imagens/icons/dinheiro.gif">
-            </div>
-        </div>
-    </div>
-
-    <div class="div-englob-ong">
-        <h3 class="h3-cont">Escolha a ONG</h3>
-        <div class="div-conteiner-ong">
-            <div class="div-ong">
-                <img class="logo-ong" src="imagens/LOGO/logo-ong-1.png">
-                <div class="div-ajudar-ong">
-                    <input class="ajd-ong" type="submit" value="Ajudar esta ONG">
+    <section>
+        <div class="div-tutorial">
+            <h3 class="h3-cont">Como doar?</h3>
+            <div class="div-conteiner-passo">
+                <div class="div-passo1">
+                    <h4 class="h4-passo1">Escolha uma ong</h4>
+                    <img class="icons" src="imagens/icons/casa2.gif">
                 </div>
-            </div>
 
-            <div class="div-ong">
-                <img class="logo-ong" src="imagens/LOGO/logo-ong-1.png">
-                <div class="div-ajudar-ong">
-                    <input class="ajd-ong" type="submit" value="Ajudar esta ONG">
+                <div class="div-passo1">
+                    <h4 class="h4-passo3">Escolha a forma de pagamento</h4>
+                    <img class="icons" src="imagens/icons/conta-bancaria.gif">
                 </div>
-            </div>
 
-            <div class="div-ong">
-                <img class="logo-ong" src="imagens/LOGO/logo-ong-1.png">
-                <div class="div-ajudar-ong">
-                    <input class="ajd-ong" type="submit" value="Ajudar esta ONG">
-                </div>
-            </div>
-
-            <div class="div-ong">
-                <img class="logo-ong" src="imagens/LOGO/logo-ong-1.png">
-                <div class="div-ajudar-ong">
-                    <input class="ajd-ong" type="submit" value="Ajudar esta ONG">
+                <div class="div-passo1">
+                    <h4 class="h4-passo2">Coloque a doação</h4>
+                    <img class="icons" src="imagens/icons/dinheiro.gif">
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="div-sobre-ong">
-        <img class="logo-sobre-ong" src="imagens/LOGO/logo-ong-1.png">
-        <div class="cont-ong">
-            <h3 class="h3-nome-ong">XnomeX</h3>
-            <p class="p-inf-ong">SOBRE A ONG, BLA BLA BLA BLA BLA BLA BLA BLAB BLA BLA BLA</p>
-            <input class="ajd-ong ajd-ong-doar" type="submit" value="Doar">
+    <section>
+        <div class="div-englob-ong">
+            <h3 class="h3-cont">Escolha a ONG</h3>
+            <div class="div-conteiner-ong">
+                <div class="div-ong">
+                    <img class="logo-ong" src="imagens/LOGO/logo-arcabrasil.png">
+                    <button class="ajd-ong" onclick="abrirModal()">Ajudar Ong</button>
+                </div>
+
+                <div class="div-ong">
+                    <img class="logo-ong" src="imagens/LOGO/logo-arcabrasil.png">
+                    <button class="ajd-ong" onclick="abrirModal()">Ajudar Ong</button>
+                </div>
+
+                <div class="div-ong">
+                    <img class="logo-ong" src="imagens/LOGO/logo-arcabrasil.png">
+                    <button class="ajd-ong" onclick="abrirModal()">Ajudar Ong</button>
+                </div>
+
+                <div class="div-ong">
+                    <img class="logo-ong" src="imagens/LOGO/logo-arcabrasil.png">
+                    <button class="ajd-ong" onclick="abrirModal()">Ajudar Ong</button>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+
+        <div class="bg-modal" id="modal">
+            <div class="modal">
+                <span class="close" onclick="fecharModal()">&times;</span>
+                <div class="header-modal">
+                    <img src="imagens/LOGO/logo-arcabrasil.png" alt="">
+                    <h2>Arca Brasil</h2>
+                    <p>ASSOCIAÇÃO HUMANITÁRIA DE PROTEÇÃO E BEM-ESTAR ANIMAL. Castrações, por exemplo: a ARCA Brasil foi a primeira ONG do país a elaborar um projeto municipal para o controle de populações de cães e gatos.</p>
+                </div>
+                <section class="galeria">
+                    <img class="foto" src="imagens/slideshow/imagem1.jpg" alt="Cachorros em uma praça">
+                    <img class="foto" src="imagens/slideshow/imagem2.jpg" alt="Cachrros na rua">
+                    <img class="foto" src="imagens/slideshow/imagem3.jpg" alt="Cachorros para adoção">
+                    <img class="foto" src="imagens/slideshow/imagem4.jpg" alt="Jaguatirica que sofreu um acidente">
+                </section>
+                <a href="fdpp">Doe agora</a>
+            </div>
+        </div>
+    </section>
+    

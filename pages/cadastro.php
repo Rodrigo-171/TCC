@@ -67,7 +67,9 @@
                 <li class="um">
                     <input class="register" type="text" id="cellphone" name="cellphone" placeholder="Celular" >
                 </li>
+    
                 <li class="dois">
+                
                     <input class="register" type="date" id="birthday" name="birthday" placeholder="Data de Nascimento">
 
                     <select class="gen" name="gen">

@@ -200,10 +200,51 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 -- Extraindo dados da tabela `usuario`
 --
+SELECT * FROM `usuario`; 
 
 INSERT INTO `usuario` (`cod_usu`, `cod_tipo_usu`, `nome_usu`, `email_usu`, `senha_usu`, `genero_usu`, `celular_usu`, `nascimento_usu`, `imagem_usu`, `cod_endereco`, `cod_status_usu`) VALUES
 (1, 2, 'jonatas', 'jonatas@jonatas.com', '4a7d1ed414474e4033ac29ccb8653d9b', 'M', 11972596964, '2000-03-19', 'fotoPerfil.jpg', 1, 'A');
 COMMIT;
+
+-- Estrutura para tabela `avaliacos`
+--
+
+CREATE TABLE `avaliacos` (
+  `id` int(11) NOT NULL,
+  `qnt_estrela` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- Fazendo dump de dados para tabela `avaliacos`
+--
+
+INSERT INTO `avaliacos` (`id`, `qnt_estrela`, `created`, `modified`) VALUES
+(1, 3, '2017-08-28 22:35:17', NULL),
+(2, 5, '2017-08-28 22:35:35', NULL);
+
+--
+-- Índices de tabelas apagadas
+--
+
+--
+-- Índices de tabela `avaliacos`
+--
+ALTER TABLE `avaliacos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas apagadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `avaliacos`
+--
+ALTER TABLE `avaliacos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+select * from `avaliacos`;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
