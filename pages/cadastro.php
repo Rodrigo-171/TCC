@@ -70,7 +70,7 @@
     
                 <li class="dois">
                 
-                    <input class="register" type="date" id="birthday" name="birthday" placeholder="Data de Nascimento">
+                    <input class="register" type="text" id="birthday" name="birthday" placeholder="Data de Nascimento">
 
                     <select class="gen" name="gen">
                         <option value="M">Masculino</option>

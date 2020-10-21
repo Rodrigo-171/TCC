@@ -1,10 +1,5 @@
 <?php $user = $_SESSION['user_logado']; ?>
 <div class="body-perfil-pet">
-    <header>
-        <div class="div-home">
-            <a class="a-header" href="home"><h1 class="h1-home">NetworkPet's</h1></a>
-        </div>
-    </header>
     
     <main class="div-foto">
         <div>

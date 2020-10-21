@@ -618,18 +618,22 @@ body{
     transition: 350ms;
 }
 
-.modal a{
+.modal button{
     width: 50%;
-    height: auto;
-    background-color: #49bf9d;
+    height: 35px;
     border: none;
+    background-color: #49bf9d;
     border-radius: 10px;
     color: white;
     font-weight: bold;
     font-size: 1em;
-    padding: 0.8em;
-    position: bottom;
     text-decoration: none;
+    margin-top: 5%;
+}
+
+.modal a{
+    text-decoration: none;
+    color: white;
 }
 
 .header-modal{
@@ -657,50 +661,7 @@ body{
     font-weight: normal;
 
 }
-.galeria{
-    overflow: hidden;
-    width: 100%;
-    height: 38%;
-    position: relative;
-    margin: auto;
-}
 
-.foto{
-    width: 80%;
-    height: 70%;
-    position: absolute;
-    border-radius: 20px;
-    opacity: 0;
-    animation: animacao 20s infinite;
-    margin: 3% 0% 0% -9em
-}
-
-.foto:nth-of-type(1){
-    animation-delay: 0s;
-}
-
-.foto:nth-of-type(2){
-    animation-delay: 5s;
-}
-.foto:nth-of-type(3){
-    animation-delay: 10s;
-}
-.foto:nth-of-type(4){
-    animation-delay: 15s;
-}
-
-@keyframes animacao{
-    0%{
-        opacity: 0.1;
-    }
-    25%{
-        opacity: 1;
-         transform: scale(1.1,1.1);
-    }
-    50%{
-        opacity: 0.1;
-    }
-}
 /*----------------------------- CADASTRO PET ---------------------------------*/
 
 #html-cadastro{
@@ -732,7 +693,7 @@ body{
 }
 
 .img-cadastro{
-    width: 25em;
+    width: 85vw;
     height: auto;
     margin: 0 auto;
     margin-top: -2em;
@@ -1182,7 +1143,7 @@ main{
 .avaliacao{
     display: inline-grid;
     align-items: center;
-    margin: 0;
+    margin: 0% 0% 10% 0%;
     background: #ffffff;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
     height: auto;
@@ -1214,4 +1175,313 @@ main{
 
 .button-default-avaliar{
     margin: 0;
+}
+
+/*-------- adote venda e namoro -----------*/
+.main-adote{
+    background-color: #fff;
+}
+
+.section-post{
+    width: 100%;
+    height: auto;
+    background-color: #49bf9d;
+    margin-top: 5%;
+    border-radius: 10px;
+}
+
+.section-post p{
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 3%;
+    margin-top: 3%;
+
+}
+
+.section-post button{
+    background-color: #49bf9d;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    width: 45%;
+    height: 50px;
+}
+
+.foto-icone{
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+}
+
+.img-post{
+    width: 100%;
+    height: auto;
+}
+
+.div-header-post{
+    width: 100%;
+    display: inline-flex;
+    padding: 5px;
+}
+
+.div-header-post i{
+    position: absolute;
+    right: 10px;
+    font-size: 1.2em;
+    color: #fff;
+    margin: 2% 0% 0% 0%;
+}
+
+/* modal das pag adote namoro e venda*/
+
+.bg-modal-pet{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.40);
+    position: fixed;
+    z-index:2;
+    top: -100%;
+    display: block;
+    transition: 350ms;
+}
+
+.modal-pet{
+    width: 100%;
+    height: 50%;
+    background-image: url(../imagens/BG/linha-abstrata.gif);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 80px auto 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.modal-pet span{
+    float: right;
+    font-size: 22px;
+    color: #000;
+    margin: 8px 15px;
+    transition: 350ms;
+    cursor: pointer;
+}
+
+.modal-pet span:hover{
+    color: #990000;
+    transition: 350ms;
+}
+
+.modal-pet h2{
+    color: #666;
+    font-weight: bold;
+}
+
+.ul-pai{
+    width: 100%;
+    height: auto;
+    display: inline-flex;
+    text-align: left;
+    font-size: 1.1em;
+}
+
+.ul-pai ul{
+    width: 100%;
+    height: auto;
+}
+
+.ul-right{
+    right: 0;
+}
+
+.modal-pet li{
+    color: #666;
+    font-size: 1em;
+    font-weight: lighter;
+    margin-top: 10%;
+}
+
+/* modal denuncia*/
+.bg-modal-denuncia{
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.40);
+    position: fixed;
+    z-index:2;
+    top: -100%;
+    display: block;
+    transition: 350ms;
+}
+
+.modal-denuncia{
+    width: 80%;
+    height: auto;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 80px auto 0 auto;
+    padding: 10px;
+    display: inline-block;
+}
+.button-denuncia{
+    width: 100%;
+    height: 45px;
+    background-color: white;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-weight: bolder;
+    color: red;
+
+}
+
+.div-header-adote{
+    background-color: orange;
+    display: inline-flex;
+    text-align: left;
+    width: 100%;
+    height: 50px;
+    border-radius: 0px 0px 5px 5px ;
+}
+
+.h1-adote{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    margin: 3% 3% 3% 3%;
+    color: white;
+    
+}
+
+.a-header-adote{
+    text-decoration: none;
+}
+
+.i-header{
+    font-size: 1.3em;
+    color: #fff;
+    position: absolute;
+    right: 0;
+    margin: 4% 5% 0% 0%;
+}
+
+
+/* barra de pesquisa */
+.search-box{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    background-color: transparent;
+    height: 30px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.search-btn{
+    color: white;
+    position: absolute;
+    top: -20%;
+    left: 0%;
+    float: right;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.3em;
+    transition: 0.3s;
+}
+
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: #555;
+    transition: 0.4s;
+    width: 0px;
+}
+
+.search-box:hover{
+    background-color: #fff;
+}
+
+.search-box:hover > .search-txt{
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn{
+    background: #49bf9d;
+}
+
+.search-box:hover > .search-btn{
+    top: -10%;
+    left: 90%;
+}
+
+/*---------chat---------*/
+.chat-header{
+    background-color: #49bf9d;
+    width: 100%;
+    height: 45px;
+    display: inline-flex;
+}
+
+.chat-header i{
+    color: #fff;
+    font-size: 1.5em;
+    margin: 3% 0% 0% 3%;
+}
+
+.chat-header h2{
+    color: #fff;
+    font-size: 1.3em;
+    font-weight: normal;
+    margin: 3% 0% 0% 3%;
+}
+
+.chat-header img{
+    width: 10vw;
+    height: 06vh;
+    border-radius: 50%;
+    margin: 1% 0% 0% 3%;
+}
+
+.chatContainer{
+    position: absolute;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    bottom: 0;
+}
+
+.btn-default{
+    position: absolute;
+    right: 5%;
+    bottom: 1.5%;
+    font-size: 1.8em;
+    color: #666;
+}
+
+
+.form-control{
+    width: 83%;
+    height: auto;
+    border: none;
+    overflow: auto;
+    background: #eee;
+    border-radius: 20px;
+    display: inline-block;
+    padding: 0px 0px 0px 2%;
+
+}
+
+.form-control::placeholder{
+    padding: 2%;
+    font-size: 1.1em;
 }

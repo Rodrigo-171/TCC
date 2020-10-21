@@ -2,8 +2,8 @@
 <?php
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
-    //$page = $url[2]; // URL Local
-    $page = $url[1]; // URL Online
+    $page = $url[2]; // URL Local
+    //$page = $url[1]; // URL Online
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {
@@ -97,13 +97,13 @@
                 require('./pages/cadastro.php');
                 break;
             case 'adote-um-pet':
-                require('./pages/adote.html');
+                require('./pages/adote.php');
                 break;
             case 'compre-um-pet':
-                require('./pages/compre.html');
+                require('./pages/compre.php');
                 break;
             case 'namoro-pet':
-                require('./pages/namoro.html');
+                require('./pages/namoro.php');
                 break;
             case 'doacao-ong':
                 require('./pages/doacao-ong.html');
@@ -141,6 +141,9 @@
             case 'editar-perfil':
                 require('./pages/editar-perfil.php');
                 break;
+            case 'chat':
+                require('./pages/chat.php');
+                break;
             default:
                 require('./pages/erro404.html'); //Caso não ache a pagina cai na pagina de erro
                 break;
@@ -154,7 +157,7 @@
 
 
     <!-- Menu Hamburguer -->
-    <?php if($page != 'login' and $page != 'cadastro'){ ?> 
+    <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat'){ ?> 
     <div class="block-teste">
         <input class="input-home" id="navbar" type='checkbox'>
         <label for="navbar">
@@ -173,6 +176,7 @@
             <?php if(isset($_SESSION['user_logado'])){ ?>
                 <li class="li-menu"><a class="a-menu" href='cadastre-seu-pet'>Cadastre um Pet</a></li>
                 <li class="li-menu"><a class="a-menu" href='pets-cadastrado'>Pet's cadastrados</a></li>
+                <li class="li-menu"><a class="a-menu" href='chat'>Bate-Papo</a></li>
                 <li class="li-menu"><a class="a-menu" href='perfil-pessoa'>Perfil</a></li>
             <?php }else{ ?>
                 <li class="li-menu"><a class="a-menu" href='login'>Entrar</a></li>
@@ -497,5 +501,41 @@
         document.getElementById('modal').style.top="-100%";
     }
 </script>
+
+<!-- data de nascimento -->
+
+<script>
+    $(document).ready(function() {
+        $('#birthday').focus(function() {
+            $(this).attr('type', 'date');
+        });
+
+        $('#birthday').blur(function() {
+            $(this).attr('type','text');
+        });
+    });
+</script>
+
+<!-- janela inf animal-->
+<script  type="text/javascript">
+    function abrirModalPet() {
+        document.getElementById('modal-pet').style.top = "0";
+    }
+    function fecharModalPet() {
+        document.getElementById('modal-pet').style.top="-100%";
+    }
+</script>
+
+<!-- janela denuncia-->
+<script  type="text/javascript">
+    function abrirModalDenuncia() {
+        document.getElementById('modal-denuncia').style.top = "0";
+    }
+    function fecharModalDenuncia() {
+        document.getElementById('modal-denuncia').style.top="-100%";
+    }
+</script>
+
+
 </body>
 </html>
