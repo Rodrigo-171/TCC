@@ -678,12 +678,12 @@ body{
 }
 
 .img-pets{
-    width: 30vw;
+    width: 25vw;
 }
 
 .h3-pets{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 1.3em;
     color: #7b7b7b;
     margin: 0;
 }
@@ -735,9 +735,10 @@ body{
 }
 
 .div-cadastro-botao > button{
+    position: absolute;
     width: 75%;
     display: block;
-    margin: 0 auto;
+    margin: 0% 0% 0% 8%;
     height: 30px;
     border-radius: 50px;
     border: 1px solid #fff;
@@ -775,7 +776,7 @@ body{
 
 #passo{
     position: relative;
-    height: 525px;
+    height: 465px;
     overflow: hidden;
     transition-duration: 0.3s;
 }
@@ -1425,63 +1426,177 @@ main{
 }
 
 /*---------chat---------*/
-.chat-header{
-    background-color: #49bf9d;
-    width: 100%;
-    height: 45px;
-    display: inline-flex;
+.container-chat {
+	width: 100%;
+	margin: auto;
+}
+.chat {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	background: #f1f0e8;
+}
+.chat-header {
+	display: flex;
+	cursor: pointer;
+}
+.profile {
+	width: 100%;
+	background: #49bf9d;
+	display: flex;
+	align-items: center;
+	height: 60px;
+	padding: 0px 10px;
+	position: relative;
+}
+.profile .pp {
+	width: 50px;
+	display: inline-block;
+	border-radius: 50%;
+	margin: 0% 0% 5% 10%;
+}
+.profile .arrow {
+	display: inline-block;
+	width: 30px;
+	position: absolute;
+	top: 19px;
+	cursor: pointer;
+}
+.profile h2 {
+	display: inline-block;
+	line-height: 60px;
+	vertical-align: bottom;
+	color: #fff;
+	font-size: 20px;
+}
+.profile span {
+	color: #ccc;
+	position: absolute;
+	top: 42px;
+	left: 100px;
+	font-size: 14px;
+}
+.right .icon {
+	display: inline-block;
+	width: 25px;
+	margin-left: 10px;
+}
+.profile .left {
+	flex: 1;
 }
 
-.chat-header i{
-    color: #fff;
-    font-size: 1.5em;
-    margin: 3% 0% 0% 3%;
+.chat-box {
+	background: url('../img/bg.jpeg');
+	background-attachment: fixed;
+	padding-left: 20px;
+	overflow-y: scroll;
+	flex: 1;
+}
+.chat-box .img_chat {
+	width: 280px;
 }
 
-.chat-header h2{
-    color: #fff;
-    font-size: 1.3em;
-    font-weight: normal;
-    margin: 3% 0% 0% 3%;
+.chat-r {
+	display: flex;
+}
+.chat-r .sp {
+	flex: 1;
 }
 
-.chat-header img{
-    width: 10vw;
-    height: 06vh;
-    border-radius: 50%;
-    margin: 1% 0% 0% 3%;
+.chat-l {
+	display: flex;
+}
+.chat-l .sp {
+	flex: 1;
 }
 
-.chatContainer{
-    position: absolute;
-    width: 100%;
-    height: auto;
-    padding: 5px;
-    bottom: 0;
+.chat-box .mess {
+	max-width: 300px;
+	background: #F7FCF6;
+	padding: 10px;
+	border-radius: 10px;
+	margin: 20px 0px;
+	cursor: pointer;
+}
+.chat-box .mess p {
+	word-break: break-all;
+	font-size: 18px;
+}
+.chat-box .mess-r {
+    background: #fbe1b9;
+}
+.chat-box .emoji {
+	width: 20px;
+}
+.chat-box .check {
+	float: right;
+}
+.chat-box .check img {
+	width: 20px;
+}
+.chat-box .check span {
+	color: #888;
+	font-size: 12px;
+	font-weight: 700px;
 }
 
-.btn-default{
-    position: absolute;
-    right: 5%;
-    bottom: 1.5%;
-    font-size: 1.8em;
-    color: #666;
+*::-webkit-scrollbar {
+	width: 5px;
+}
+*::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+*::-webkit-scrollbar-thumb {
+	background: #aaa;
+}
+*::-webkit-scrollbar-thumb:hover {
+	background: #555;
 }
 
+.chat-footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 60px;
+	position: relative;
+	cursor: pointer;
+}
+.chat-footer textarea {
+	display: block;
+	flex: 1;
+	width: 100%;
+	height: 45px;
+	border-radius: 60px;
+	margin: 5px;
+	padding: 8px 0px 8px 20px;
+	outline: none;
+	font-size: 16px;
+	border: 2px solid #ccc;
+	color: #555;
+	resize: none;
+}
+.chat-footer .mic {
+	display: block;
+	font-size: 2em;
+	margin-right: 20px;
+}
 
-.form-control{
-    width: 83%;
-    height: auto;
-    border: none;
-    overflow: auto;
-    background: #eee;
-    border-radius: 20px;
+.chat-footer .emo{
+	display: block;
+	width: 35px;
+	height: 35px;
+	position: absolute;
+	left: 10px;
+	top: 12px;
+}
+.chat-footer .icons {
+	position: absolute;
+	right: 100px;
+	top: 10px;
+}
+.chat-footer .icons img{
     display: inline-block;
-    padding: 0px 0px 0px 2%;
-
-}
-
-.form-control::placeholder{
-    padding: 2%;
-    font-size: 1.1em;
+    width: 35px;
+    height: 35px;
+    margin-left: 5px;
 }

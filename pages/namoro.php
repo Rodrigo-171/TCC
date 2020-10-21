@@ -22,11 +22,11 @@
 
         <img class="img-post" src="imagens/fotos/1.jpg" alt=""><!-- img do animal-->
         
-        <button onclick="abrirModal()">Ver mais</button>
+        <button onclick="abrirModalNamoro()">Ver mais</button>
         <button>Bate-papo</button>
-        <div class="bg-modal-pet" id="modal-pet">
+        <div class="bg-modal-pet" id="modal-pet-namoro">
             <div class="modal-pet">
-                <span class="close" onclick="fecharModal()">&times;</span>
+                <span class="close" onclick="fecharModalNamoro()">&times;</span>
                     <h2>Informações</h2>
                     <ul class="ul-pai">
                         <ul class="ul-left">

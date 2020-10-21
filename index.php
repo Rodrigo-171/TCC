@@ -516,13 +516,32 @@
     });
 </script>
 
-<!-- janela inf animal-->
+<!-- janela inf animal doação-->
 <script  type="text/javascript">
     function abrirModalPet() {
         document.getElementById('modal-pet').style.top = "0";
     }
     function fecharModalPet() {
         document.getElementById('modal-pet').style.top="-100%";
+    }
+</script>
+<!-- janela inf animal venda-->
+<script  type="text/javascript">
+    function abrirModalCompra() {
+        document.getElementById('modal-pet-venda').style.top = "0";
+    }
+    function fecharModalCompra() {
+        document.getElementById('modal-pet-venda').style.top="-100%";
+    }
+</script>
+
+<!-- janela inf animal namoro-->
+<script  type="text/javascript">
+    function abrirModalNamoro() {
+        document.getElementById('modal-pet-namoro').style.top = "0";
+    }
+    function fecharModalNamoro() {
+        document.getElementById('modal-pet-namoro').style.top="-100%";
     }
 </script>
 
