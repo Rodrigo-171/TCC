@@ -827,6 +827,60 @@ body{
     background-repeat:no-repeat;
 }
 
+/*----------------------------- PET'S CADASTRADOS ---------------------------------*/
+.header-pet-cadas{
+    background-color: orange;
+    display: inline-flex;
+    text-align: left;
+    width: 100%;
+    height: 50px;
+    border-radius: 0px 0px 5px 5px ;
+}
+
+.header-pet-cadas h1{
+    font-size: 1.3em;
+    color: #fff;
+    position: absolute;
+    right: 4%;
+    top: 0%;
+}
+
+.container-pet-cadas{
+    width: 100%;
+    margin: auto;
+    background-color: #c6c6c6;
+}
+
+.pet-cadas-box{
+    background-color: #ccc;
+    width: 100%;
+    display: inline-flex;
+    border-bottom: 1px solid #666;
+    border: none;
+}
+
+.pet-cadas-right{
+    margin-left: 5%;
+}
+
+.pet-cadas-right h2{
+    font-size: 1.3em;
+    color: #666;
+    font-weight: bolder;
+}
+
+.img-pet-foto{
+    width: 13vw;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 1%;
+}
+
+.red-pet{
+    text-decoration: none;
+}
+
+
 /*----------------------------- FORMA DE PAGAMENTO ---------------------------------*/
 .pag-fdp{
     height: 100%;
@@ -1220,6 +1274,11 @@ main{
     height: auto;
 }
 
+.post{
+    width: 100%;
+    display: inline-flex;
+    padding: 5px;
+}
 .div-header-post{
     width: 100%;
     display: inline-flex;
@@ -1600,3 +1659,57 @@ main{
     height: 35px;
     margin-left: 5px;
 }
+
+/* armazem de chat*/
+.header-chat{
+    background-color: orange;
+    display: inline-flex;
+    text-align: left;
+    width: 100%;
+    height: 50px;
+    border-radius: 0px 0px 5px 5px ;
+}
+
+.header-chat h1{
+    font-size: 1.3em;
+    color: #fff;
+    position: absolute;
+    right: 4%;
+    top: 0%;
+}
+
+.container-chat-arm{
+    width: 100%;
+    margin: auto;
+    background-color: #ccc;
+}
+
+.chat-arm-box{
+    background-color: #ccc;
+    width: 100%;
+    display: inline-flex;
+    border-bottom: 1px solid #666;
+    border: none;
+}
+
+.chat-arm-right{
+    margin-left: 5%;
+}
+
+.chat-arm-right h2{
+    font-size: 1.3em;
+    color: #666;
+    font-weight: bolder;
+}
+
+.img-foto-icone{
+    width: 13vw;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 1%;
+}
+
+.red-chat{
+    text-decoration: none;
+}
+    

@@ -109,7 +109,7 @@
                 require('./pages/doacao-ong.html');
                 break;
             case 'pets-cadastrado':
-                require('./pages/pets-cadastrado.html');
+                require('./pages/pets-cadastrado.php');
                 break;
             case 'perfil':
                 require('./pages/perfil.html');
@@ -143,6 +143,9 @@
                 break;
             case 'chat':
                 require('./pages/chat.php');
+                break;
+            case 'chat-arm':
+                require('./pages/chat-arm.php');
                 break;
             default:
                 require('./pages/erro404.html'); //Caso não ache a pagina cai na pagina de erro

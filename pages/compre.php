@@ -22,7 +22,7 @@
 
         <img class="img-post" src="imagens/fotos/1.jpg" alt=""><!-- img do animal-->
         
-        <button onclick="abrirModalCompre()">Ver mais</button>
+        <button onclick="abrirModalCompra()">Ver mais</button>
         <button>Compre</button>
         <div class="bg-modal-pet" id="modal-pet-venda">
             <div class="modal-pet">
