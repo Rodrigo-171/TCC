@@ -1,3 +1,4 @@
+<?php $user = $_SESSION['user_logado']; ?>
 <body class="bg-abstratact"> 
     
 <div class="cadastroPet">
@@ -7,7 +8,7 @@
         <div id="passo">
             <div id="passo-1" class="div-cadastro passo-ativo">
                 <div class="div-cadastro-titulo">
-                    <h2 class="h2-cadastro">Olá (user), qual a espécie do seu pet?</h2>
+                    <h2 class="h2-cadastro">Olá <?php echo $user['nome_usu']?>, qual a espécie do seu pet?</h2>
                 </div>
                 <div class="div-cadastro-opcao">
                     <button type="button" class="botao-pet" onclick="selecionarPet(this, 'cachorro')">

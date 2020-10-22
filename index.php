@@ -2,44 +2,68 @@
 <?php
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
-    //$page = $url[2]; // URL Local
-    $page = $url[1]; // URL Online
+    $page = $url[2]; // URL Local
+    //$page = $url[1]; // URL Online
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {
         case '':
         case 'home':
-            $titulo = 'Home';
+            $titulo = 'Home | NetworkPet';
             break;
         case 'cadastro':
-            $titulo = 'Cadastro';
+            $titulo = 'Cadastro | NetworkPet';
             break;
         case 'adote-um-pet':
-            $titulo = 'Adote um pet';
+            $titulo = 'Adote um pet | NetworkPet';
             break;
         case 'compre-um-pet':
-            $titulo = 'Compre um pet';
+            $titulo = 'Compre um pet | NetworkPet';
             break;
         case 'namoro-pet':
-            $titulo = 'Namoro Pet';
+            $titulo = 'Namoro Pet | NetworkPet';
             break;
         case 'doacao-ong':
-            $titulo = "Doe para ONG's";
+            $titulo = "Doe para ONG's | NetworkPet";
             break;
         case 'pets-cadastrado':
-            $titulo = "Pet's cadastrados";
+            $titulo = "Pet's cadastrados | NetworkPet";
             break;
-        case 'perfil':
-            $titulo = "Perfil";
+        case 'perfil-pessoa':
+            $titulo = "Perfil | NetworkPet";
+            break;
+        case 'perfil-pet':
+            $titulo = "Perfil Pet | NetworkPet";
             break;
         case 'login':
-            $titulo = "Login";
+            $titulo = "Login | NetworkPet";
             break;
         case 'editar-perfil':
-            $titulo = "Editar Perfil";
+            $titulo = "Editar Perfil | NetworkPet";
+            break;
+        case 'boleto':
+            $titulo = "Boleto | NetworkPet";
+            break;
+        case 'cartao':
+            $titulo = "Cartão | NetworkPet";
+            break;
+        case 'cadastre-seu-pet':
+            $titulo = "Cadastro do Pet | NetworkPet";
+            break;
+        case 'fdpp':
+            $titulo = "Forma de Pagamento | NetworkPet";
+            break;
+        case 'chat':
+            $titulo = "Bate Papo | NetworkPet";
+            break;
+        case 'chat-arm':
+            $titulo = "Armazém de Chat | NetworkPet";
+            break;
+        case 'acesso-negado':
+            $titulo = "Acesso Negado | NetworkPet";
             break;
         default:
-            $titulo = 'Home';
+            $titulo = 'Home | NetworkPet';
             break;
     }
 ?>
@@ -65,6 +89,14 @@
     <link rel=stylesheet media="screen and (min-width: 481px) and (max-width:839px) " href="css/estilo-839px.css">
     <link rel=stylesheet media="screen and (min-width: 840px) and (max-width:1024px) " href="css/estilo-1024px.css">
     <link rel=stylesheet media="screen and (min-width: 1025px)" href="css/estilo-1025px.css">
+
+    <script>
+        if (screen.width>480){
+            window.location.assign("acesso-negado");
+        }
+        else{
+        }
+    </script>
     
     <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -121,7 +153,7 @@
                 require('./pages/cartao.html');
                 break;
             case 'cadastre-seu-pet':
-                require('./pages/cadastre-seu-pet.html');
+                require('./pages/cadastre-seu-pet.php');
                 break;
             case 'checkin':
                 require('./pages/checkin.html');
@@ -147,6 +179,9 @@
             case 'chat-arm':
                 require('./pages/chat-arm.php');
                 break;
+            case 'acesso-negado':
+                require('./pages/acesso-negado.html');
+                break;
             default:
                 require('./pages/erro404.html'); //Caso não ache a pagina cai na pagina de erro
                 break;
@@ -160,7 +195,7 @@
 
 
     <!-- Menu Hamburguer -->
-    <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat'){ ?> 
+    <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat' and $page != 'acesso-negado'){ ?> 
     <div class="block-teste">
         <input class="input-home" id="navbar" type='checkbox'>
         <label for="navbar">
@@ -179,7 +214,7 @@
             <?php if(isset($_SESSION['user_logado'])){ ?>
                 <li class="li-menu"><a class="a-menu" href='cadastre-seu-pet'>Cadastre um Pet</a></li>
                 <li class="li-menu"><a class="a-menu" href='pets-cadastrado'>Pet's cadastrados</a></li>
-                <li class="li-menu"><a class="a-menu" href='chat'>Bate-Papo</a></li>
+                <li class="li-menu"><a class="a-menu" href='chat-arm'>Bate-Papo</a></li>
                 <li class="li-menu"><a class="a-menu" href='perfil-pessoa'>Perfil</a></li>
             <?php }else{ ?>
                 <li class="li-menu"><a class="a-menu" href='login'>Entrar</a></li>

@@ -1681,15 +1681,12 @@ main{
 .container-chat-arm{
     width: 100%;
     margin: auto;
-    background-color: #ccc;
 }
 
 .chat-arm-box{
-    background-color: #ccc;
     width: 100%;
     display: inline-flex;
-    border-bottom: 1px solid #666;
-    border: none;
+    border-bottom: 1px solid #e6e4e4;
 }
 
 .chat-arm-right{
@@ -1713,3 +1710,77 @@ main{
     text-decoration: none;
 }
     
+/*--------------- Error 404 ---------------*/
+.bg-erro404{
+    display: block;
+    padding: 10px;
+}
+
+.bg-erro404 h1{
+    font-size: 2em;
+    font-weight: normal;
+    color: black;
+}
+
+.bg-erro404 h2{
+    font-size: 1.3em;
+    font-weight: lighter;
+    color: black;
+}
+
+.bg-erro404 p{
+    font-size: 1em;
+    font-weight: lighter;
+    color: #666;
+}
+
+.bg-erro404 a{
+    font-size: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    color: rgb(250, 193, 6);
+}
+
+.img-404{
+    width: 80vw;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.img-404-bottom{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+/*---------- acesso negado ----------*/
+.div-acesso{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+.div-acesso h1{
+    font-size: 1.5em;
+    font-weight: bolder;
+    color: coral;
+}
+
+.div-acesso p{
+    font-size: 1em;
+    font-weight: normal;
+    color: #666;
+}
+
+.img-acesso{
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
