@@ -2,8 +2,8 @@
 <?php
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
-    //$page = $url[2]; // URL Local
-    $page = $url[1]; // URL Online
+    $page = $url[2]; // URL Local
+    // $page = $url[1]; // URL Online
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {
@@ -92,7 +92,7 @@
 
     <script>
         if (screen.width>480){
-            window.location.assign("acesso-negado");
+            // window.location.assign("acesso-negado");
         }
         else{
         }
@@ -196,38 +196,51 @@
 
     <!-- Menu Hamburguer -->
     <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat' and $page != 'acesso-negado'){ ?> 
-    <div class="block-teste">
-        <input class="input-home" id="navbar" type='checkbox'>
-        <label for="navbar">
-            <div class='menu'>
-                <span class='hamburger'></span>
-            </div>
-        </label>
+        <div class="block-teste">
+            <input class="input-home" id="navbar" type='checkbox'>
+            <label for="navbar">
+                <div class='menu'>
+                    <span class='hamburger'></span>
+                </div>
+            </label>
 
-        <ul class="menu-ul">
-            <li class="li-menu"><a class="a-menu" href='home'>Home</a></li>
-            <li class="li-menu"><a class="a-menu"href='adote-um-pet'>Adote um Pet</a></li>
-            <li class="li-menu"><a class="a-menu" href='compre-um-pet'>Compre um Pet</a></li>
-            <li class="li-menu"><a class="a-menu" href='namoro-pet'>Namoro Pet</a></li>
-            <li class="li-menu"><a class="a-menu" href='doacao-ong'>Doe para ONG's</a></li>
-            <!-- Aqui ele verifica se tem alguem logado ou não, quando for para valer retirar o "|| true" -->
-            <?php if(isset($_SESSION['user_logado'])){ ?>
-                <li class="li-menu"><a class="a-menu" href='cadastre-seu-pet'>Cadastre um Pet</a></li>
-                <li class="li-menu"><a class="a-menu" href='pets-cadastrado'>Pet's cadastrados</a></li>
-                <li class="li-menu"><a class="a-menu" href='chat-arm'>Bate-Papo</a></li>
-                <li class="li-menu"><a class="a-menu" href='perfil-pessoa'>Perfil</a></li>
-            <?php }else{ ?>
-                <li class="li-menu"><a class="a-menu" href='login'>Entrar</a></li>
-            <?php } ?>
-        </ul>
-    </div>
+            <ul class="menu-ul">
+                <li class="li-menu"><a class="a-menu" href='home'>Home</a></li>
+                <li class="li-menu"><a class="a-menu"href='adote-um-pet'>Adote um Pet</a></li>
+                <li class="li-menu"><a class="a-menu" href='compre-um-pet'>Compre um Pet</a></li>
+                <li class="li-menu"><a class="a-menu" href='namoro-pet'>Namoro Pet</a></li>
+                <li class="li-menu"><a class="a-menu" href='doacao-ong'>Doe para ONG's</a></li>
+                <!-- Aqui ele verifica se tem alguem logado ou não, quando for para valer retirar o "|| true" -->
+                <?php if(isset($_SESSION['user_logado'])){ ?>
+                    <li class="li-menu"><a class="a-menu" href='cadastre-seu-pet'>Cadastre um Pet</a></li>
+                    <li class="li-menu"><a class="a-menu" href='pets-cadastrado'>Pet's cadastrados</a></li>
+                    <li class="li-menu"><a class="a-menu" href='chat-arm'>Bate-Papo</a></li>
+                    <li class="li-menu"><a class="a-menu" href='perfil-pessoa'>Perfil</a></li>
+                <?php }else{ ?>
+                    <li class="li-menu"><a class="a-menu" href='login'>Entrar</a></li>
+                <?php } ?>
+            </ul>
+        </div>
     <?php } ?>
     
 
 
     <!-- funções do cadastrar pet -->
     <script>
-        function selecionarPet(botao, animal){
+        function selecionarPet(botao, especie, animal){
+            $.ajax({
+                url: `php/especie_selecionada.php`,
+                type : "POST",
+                data: {especie},
+                success: function(resposta){
+                    var racas = JSON.parse(resposta);
+                    localStorage.setItem('racas', JSON.stringify(racas.data));
+                },
+                error : function(erro){
+                    console.log(erro);
+                }
+            });
+
             var botaoAtivo = document.getElementsByClassName("ativo");
             if(botaoAtivo.length > 0){
                 botaoAtivo[0].classList.remove("ativo");
@@ -379,6 +392,15 @@
                     document.getElementById("passo-6").classList.remove("depois");
                     document.getElementById("passo-6").classList.add("passo-ativo");
                     document.getElementById("botao-passo5").style.display = "none";
+                    document.getElementById("botao-passo6").style.display = "block";
+                    document.getElementById("passo").style.height = document.getElementById("passo-4").offsetHeight+'px';
+                    break;
+                case 7:
+                    document.getElementById("passo-6").classList.remove("passo-ativo");
+                    document.getElementById("passo-6").classList.add("antes");
+                    document.getElementById("passo-7").classList.remove("depois");
+                    document.getElementById("passo-7").classList.add("passo-ativo");
+                    document.getElementById("botao-passo6").style.display = "none";
                     document.getElementById("botao-salvar").style.display = "block";
                     document.getElementById("passo").style.height = document.getElementById("passo-4").offsetHeight+'px';
                     break;
@@ -386,7 +408,6 @@
                     break;
             }
         }
-       
     </script>
 
     <script>
@@ -397,73 +418,23 @@
             }
             botao.classList.add("ativo");
             botao.nextSibling.nextSibling.checked = true;
-            var opcoes;
-            switch (animal) {
-                case 'cachorro':
-                    opcoes = `
-                        <div class="div-cadastro-titulo">
-                            <h2 class="h2-cadastro">Qual a raça do animal?</h2>
-                        </div>
-                        <div class="div-cadastro-opcao">
-                            <img class="img-pets" src="imagens/cachorro/cachorro.gif">
-                            <select class="select-raca">
-                                <option value="VL">Raça</option>
-                                <option value="VL">Vira Lata</option>
-                                <option value="PB">Pitbull</option>
-                                <option value="PC">Pincher</option>
-                            </select>
-                        </div>
-                    `;
-                    break;
-                case 'gato':
-                    opcoes = `
-                    <div class="div-cadastro-titulo">
-                            <h2 class="h2-cadastro">Qual a raça do animal?</h2>
-                        </div>
-                        <div class="div-cadastro-opcao">
-                            <img class="img-pets" src="imagens/gato/gato.gif">
-                            <select class="select-raca">
-                                <option value="VL">Raça</option>
-                                <option value="VL">Vira Lata</option>
-                                <option value="PB">Pitbull</option>
-                                <option value="PC">Pincher</option>
-                            </select>
-                        </div>
-                    `;
-                    break;
-                case 'coelho':
-                    opcoes = `
-                    <div class="div-cadastro-titulo">
-                            <h2 class="h2-cadastro">Qual a raça do animal?</h2>
-                        </div>
-                        <div class="div-cadastro-opcao">
-                            <img class="img-pets" src="imagens/coelho/coelho.gif">
-                            <select class="select-raca">
-                                <option value="VL">Raça</option>
-                                <option value="VL">Vira Lata</option>
-                                <option value="PB">Pitbull</option>
-                                <option value="PC">Pincher</option>
-                            </select>
-                        </div>
-                    `;
-                    break;
-                case 'roedor':
-                    opcoes = `
-                    <div class="div-cadastro-titulo">
-                            <h2 class="h2-cadastro">Qual a raça do animal?</h2>
-                        </div>
-                        <div class="div-cadastro-opcao">
-                            <img class="img-pets" src="imagens/roedor/roedor.gif">
-                            <select class="select-raca">
-                                <option value="VL">Raça</option>
-                                <option value="VL">Vira Lata</option>
-                                <option value="PB">Pitbull</option>
-                                <option value="PC">Pincher</option>
-                            </select>
-                        </div>
-                    `;
-                    break;
+            var opcoes = `
+                <div class="div-cadastro-titulo">
+                    <h2 class="h2-cadastro">Qual a raça do animal?</h2>
+                </div>
+                <div class="div-cadastro-opcao">
+                    <img class="img-pets" src="imagens/cachorro/cachorro.gif">
+                    <select name="raca" class="select-raca">
+                        <option value="0">Raça</option>
+            `;
+
+            var racas = JSON.parse(localStorage.getItem('racas'));
+
+            for(raca of racas){
+                opcoes += `<option value="${raca.cod_raca}">${raca.nome_raca}</option>`;
             }
+
+            opcoes += `</select></div>`
 
             document.getElementById("passo-3").innerHTML = opcoes;
         }
@@ -503,31 +474,27 @@
 
     <!-- cadastro -->
     <script>
-    $('input[name=cep]').change(function(){
-    var cep  = $(this).val();
-    cep = cep.replace("-", "");
-    $.ajax({
-        url: `https://viacep.com.br/ws/${cep}/json`,
-        dataType : "json",
-        success: function(resposta){
-            console.log(resposta);
+        $('input[name=cep]').change(function(){
+            var cep  = $(this).val();
+            cep = cep.replace("-", "");
+            $.ajax({
+                url: `https://viacep.com.br/ws/${cep}/json`,
+                dataType : "json",
+                success: function(resposta){
+                    console.log(resposta);
 
-            $("#city").val(resposta.localidade);
-            $("#estado").val(resposta.uf);
-            $("#bairro").val(resposta.bairro);
-            $("#rua").val(resposta.logradouro);
-            $("#complemento").val(resposta.complemento);
-        },
-        error : function(erro){
-            console.log(erro);
-        }
-    })
-});
-</script>
-
-<script>
-    app.listen(process.env.PORT || 3000);
-</script>
+                    $("#city").val(resposta.localidade);
+                    $("#estado").val(resposta.uf);
+                    $("#bairro").val(resposta.bairro);
+                    $("#rua").val(resposta.logradouro);
+                    $("#complemento").val(resposta.complemento);
+                },
+                error : function(erro){
+                    console.log(erro);
+                }
+            })
+        });
+    </script>
 
 <!-- ABRIR E FECHAR MODAL PAGINA DA ONG -->
 
@@ -550,6 +517,33 @@
 
         $('#birthday').blur(function() {
             $(this).attr('type','text');
+        });
+    });
+</script>
+
+<!-- data de nascimento -->
+
+<script>
+    $(document).ready(function() {
+        $('#venda').change(function() {
+            $('label[for=venda]').css('border', '3px solid #1ae8ad');
+            $('label[for=adocao]').css('border', '3px solid #49bf9d');
+            $('label[for=namoropet]').css('border', '3px solid #49bf9d');
+            $('#preco-animal').css('display', "inline");
+        });
+
+        $('#adocao').change(function() {
+            $('label[for=venda]').css('border', '3px solid #49bf9d');
+            $('label[for=adocao]').css('border', '3px solid #1ae8ad');
+            $('label[for=namoropet]').css('border', '3px solid #49bf9d');
+            $('#preco-animal').css('display', "none");
+        });
+        
+        $('#namoropet').change(function() {
+            $('label[for=venda]').css('border', '3px solid #49bf9d');
+            $('label[for=adocao]').css('border', '3px solid #49bf9d');
+            $('label[for=namoropet]').css('border', '3px solid #1ae8ad');
+            $('#preco-animal').css('display', "none");
         });
     });
 </script>

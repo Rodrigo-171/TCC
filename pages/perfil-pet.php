@@ -26,14 +26,14 @@
                     <ul class="ul-dados-perfil">
                         <li class="li-perf"><P class="text-perf">Nome</P>
                             <p class="inp-perf"><?php echo $user['nome_usu'] ?></p></li>
-                        <li class="li-perf"><P class="text-perf">Estado</P>
+                        <li class="li-perf"><P class="text-perf">Especie</P>
                             <p class="inp-perf" ><?php echo $user['estado'] ?></p>
                         </li>
                     </ul>
                     <ul class="ul-dados-perfil">
-                        <li class="li-perf"><P class="text-perf">Cidade</P>
+                        <li class="li-perf"><P class="text-perf">Raça</P>
                             <p class="inp-perf"><?php echo $user['cidade'] ?></p></li>
-                        <li class="li-perf"><P class="text-perf">Email</P>
+                        <li class="li-perf"><P class="text-perf">Sexo</P>
                             <p class="inp-perf"><?php echo $user['email_usu'] ?></p></li>  
                     </ul>
 

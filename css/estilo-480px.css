@@ -699,6 +699,25 @@ body{
     margin-top: -2em;
 }
 
+.img-cadastro2{
+    width: 85vw;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 0em;
+}
+
+.carregar-foto{
+    position: absolute;
+    width: 75%;
+    display: block;
+    margin: 0% 0% 0% 8%;
+    height: 30px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    background-color: #49bf9d;
+    color: #fff;
+}
+
 .div-cadastro{
     display: flex; /* display: flex é melhor float, ele meio que forma um linha ai caso precisar de coluna mude para flex-direction: column; faz o teste é muito melhor!!! de uma olhada aquo https://the-echoplex.net/flexyboxes/, aqui tambem https://www.youtube.com/watch?v=H91DhKPjhPk ;-) */
     flex-wrap: wrap;
@@ -747,6 +766,13 @@ body{
 }
 
 .div-cadastro-opcao{
+    width: 40%;
+    padding: 0 5px;
+    margin: 7px 0;
+    text-align: center;
+}
+
+.div-cadastro-foto{
     width: 40%;
     padding: 0 5px;
     margin: 7px 0;
@@ -811,7 +837,7 @@ body{
     cursor: pointer;
     margin-top: 15%;
     margin-left: 2%;
-    margin-right: 4%;
+    margin-right: 2%;
 }
 
 #preco-animal{
