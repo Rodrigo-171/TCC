@@ -21,9 +21,15 @@ $result = mysqli_query($conexao, $query);
 
 $row = mysqli_fetch_assoc($result);
 
+$cod_tipo_usu = $row['cod_tipo_usu'];
+
 if($row){
     $_SESSION['user_logado'] = $row;
-    header('Location: ../perfil-pessoa');
+        if($cod_tipo_usu == 1){
+            header('Location: ../administrativo');
+        }else{
+            header('Location: ../perfil-pessoa');
+        }
     exit();
 }else{
     $_SESSION['nao_autenticado'] = true;

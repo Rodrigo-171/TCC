@@ -7,7 +7,7 @@
             <img src="imagens/fotos_usuario/<?php echo $user['imagem_usu'] ?>">
         </div>
     </main>
-
+    
     <div class="button-perfil">
         <div>
             <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>
@@ -15,9 +15,11 @@
         <div>
             <a href="php/deslogar.php"><i class="fas fa-sign-out-alt"></i><br>Sair</a>
         </div>
+        
         <div>
-            <a type="submit"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
+            <a href="php/apagar-usuario.php"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
         </div>
+        
     </div>
     
 

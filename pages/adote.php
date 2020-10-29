@@ -44,6 +44,8 @@
             </div>
         </div>
     </section>
+
+    
     <div class="bg-modal-denuncia" id="modal-denuncia">
         <div class="modal-denuncia">
             <button class="button-denuncia">Denunciar</button>

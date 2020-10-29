@@ -182,6 +182,12 @@
             case 'acesso-negado':
                 require('./pages/acesso-negado.html');
                 break;
+            case 'administrativo':
+                require('./pages/administrativo.php');
+                break;
+            case 'menu-adm':
+                require('./pages/menu_adm.php');
+                break;
             default:
                 require('./pages/erro404.html'); //Caso não ache a pagina cai na pagina de erro
                 break;
@@ -195,7 +201,7 @@
 
 
     <!-- Menu Hamburguer -->
-    <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat' and $page != 'acesso-negado'){ ?> 
+    <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat' and $page != 'acesso-negado' and $page != 'administrativo'){ ?> 
         <div class="block-teste">
             <input class="input-home" id="navbar" type='checkbox'>
             <label for="navbar">
