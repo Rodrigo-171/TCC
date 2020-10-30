@@ -18,6 +18,11 @@ p{
     color: #666;
     font-size: 1em;
 }
+
+.form-login {
+    text-align: center;
+}
+
 .body-x{
     background-image: radial-gradient(circle, orange, #f8b53a, rgb(255, 136, 0));
     width: 100%;

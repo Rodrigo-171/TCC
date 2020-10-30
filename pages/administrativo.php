@@ -36,8 +36,9 @@ include_once("php/conexao.php");
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Usuários</a></li>
+					<li><a href="administrativo">Usuários</a></li>
 					<li><a href="#about">Vendas</a></li>
+					<li><a href="php/deslogar.php">Sair</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -55,7 +56,7 @@ include_once("php/conexao.php");
 			$pagina = (!empty($pagina_atual)) ? $pagina_atual : 1;
 
 			//Setar a quantidade de itens por pagina
-			$qnt_result_pg = 2;
+			$qnt_result_pg = 15;
 
 			//calcular o inicio visualização
 			$inicio = ($qnt_result_pg * $pagina) - $qnt_result_pg;
@@ -63,70 +64,54 @@ include_once("php/conexao.php");
 			//Listar usuarios
 			$result_usuarios = "SELECT * FROM usuario LIMIT $inicio, $qnt_result_pg";
 			$resultado_usuarios = mysqli_query($conexao, $result_usuarios);
-			while($row_usuario = mysqli_fetch_assoc($resultado_usuarios)){
-				echo "ID: " . $row_usuario['cod_usu'] . "<br>";
-				echo "Nome: " . $row_usuario['nome_usu'] . "<br>";
-				echo "Email: " . $row_usuario['email_usu'] . "<br><hr>";
-			}
+			$row_usuario = mysqli_fetch_assoc($resultado_usuarios);
 
-			//Paginação - somar a quantidade de usuarios
-			$result_pg = "SELECT COUNT(cod_usu) AS num_result FROM usuario";
-			$resultado_pg = mysqli_query($conexao, $result_pg);
-			$row_pg = mysqli_fetch_assoc($resultado_pg);
-			//echo $row_pg['num_result'];
-			//Quantidade de pagina
-			$quantidade_pg = ceil($row_pg['num_result'] / $qnt_result_pg);
+			//Definindo o sexo
+			$sexo['M'] = "Masculino";
+			$sexo['F'] = "Feminino";
 
-			//Limitar os link antes depois
-			$max_links = 2;
-			echo "<a href='administrativo.php?pagina=1'>Primeira</a>";
-
-			for($pag_ant = $pagina - $max_links; $pag_ant <= $pagina - 1; $pag_ant ++){
-				if($pag_ant >= 1){
-				echo "<a href='administrativo.php?pagina=$pag_ant'>$pag_ant</a>";
-				}
-			}
-
-			echo "$pagina";
-
-			for($pag_dep = $pagina + 1; $pag_dep <= $pagina + $max_links; $pag_dep ++){
-				if($pag_dep <= $quantidade_pg){
-				echo "<a href='administrativo.php?pagina=$pag_dep'>$pag_dep</a>";
-				}
-			}
-
-			echo "<a href='administrativo.php?pagina=$quantidade_pg'>Ultima</a>";
+			//Definindo Cod_tipo_usu
+			$cod_tipo_usu[1] = "Administrator";
+			$cod_tipo_usu[2] = "Básico";
 		?>
 
-
+		
 		<div class="row">
 			<div class="col-md-12">
 				<table class="table">
 					<thead>
 						<tr>
-							<th></th>
+							<th>ID</th>
 							<th>Nome</th>
 							<th>Email</th>
-							<th>Senha</th>
+							<th>Nivel de acesso</th>
 							<th>Celular</th>
+							<th>Sexo</th>
+							<th>Nascimento</th>
 							<th>Ações</th>
 						</tr>
 					</thead>
-				
+
 					<tbody>
-					
+					<?php
+						do{
+					?>
 						<tr>
-							<td><?php echo $user['nome_usu'] ?></td>
-							<td>Cesar Szpak</td>
-							<td>Ativo</td>
-							<td>Administrador</td>
-							<td>10/10/1980 10:15:20</td>
+							<td><?php echo $row_usuario['cod_usu'] ?></td>
+							<td><?php echo $row_usuario['nome_usu'] ?></td>
+							<td><?php echo $row_usuario['email_usu'] ?></td>
+							<td><?php echo $cod_tipo_usu[$row_usuario['cod_tipo_usu']] ?></td>
+							<td><?php echo $row_usuario['celular_usu'] ?></td>
+							<td><?php echo $sexo[$row_usuario['genero_usu']] ?></td>
+							<td><?php echo $row_usuario['nascimento_usu'] ?></td>
+							
 							<td>
-								<button type="button" class="btn btn-xs btn-primary">Visualizar</button>
-								<button type="button" class="btn btn-xs btn-warning">Editar</button>
-								<button type="button" class="btn btn-xs btn-danger">Apagar</button>
+								<a href="editar-usuario" type="button" class="btn btn-xs btn-warning">Editar</a>
+								<a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $row_usuario['nome_usu'];?>?'))
+								location.href='php/deletar.php?p=deletar&usuario=<?php echo $row_usuario['cod_usu'];?>';" type="button" class="btn btn-xs btn-danger">Apagar</a>
 							</td>
 						</tr>
+						<?php }while($row_usuario = mysqli_fetch_assoc($resultado_usuarios));?>
 					</tbody>
 					
 				</table>

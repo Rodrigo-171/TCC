@@ -2,8 +2,8 @@
 <?php
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
-    $page = $url[2]; // URL Local
-    // $page = $url[1]; // URL Online
+    //$page = $url[2]; // URL Local
+     $page = $url[1]; // URL Online
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {
@@ -62,6 +62,9 @@
         case 'acesso-negado':
             $titulo = "Acesso Negado | NetworkPet";
             break;
+        case 'administrativo':
+            $titulo = "Painel Administrador | NetworkPet";
+            break;
         default:
             $titulo = 'Home | NetworkPet';
             break;
@@ -84,6 +87,12 @@
     <link rel=stylesheet href="css/default.css">
     <link rel=stylesheet href="js/menuhamburguer.js">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- BOOTSTRAP-->
+    <link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+	<link href="css/theme.css" rel="stylesheet">
+	<script src="js/ie-emulation-modes-warning.js"></script>
+    
 
     <link rel=stylesheet media="screen and (max-width:480px)" href="css/estilo-480px.css">
     <link rel=stylesheet media="screen and (min-width: 481px) and (max-width:839px) " href="css/estilo-839px.css">
@@ -188,6 +197,9 @@
             case 'menu-adm':
                 require('./pages/menu_adm.php');
                 break;
+            case 'editar-usuario':
+                require('./pages/editar-usuario.php');
+                break;
             default:
                 require('./pages/erro404.html'); //Caso não ache a pagina cai na pagina de erro
                 break;
@@ -201,7 +213,7 @@
 
 
     <!-- Menu Hamburguer -->
-    <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat' and $page != 'acesso-negado' and $page != 'administrativo'){ ?> 
+    <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat' and $page != 'acesso-negado' and $page != 'administrativo' and $page != 'editar-usuario'){ ?> 
         <div class="block-teste">
             <input class="input-home" id="navbar" type='checkbox'>
             <label for="navbar">

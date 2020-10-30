@@ -18,7 +18,7 @@
 					<div class="sp"></div>
 					<div class="mess mess-r">
 						<p><img src="imagens/chat/emoji-1.png" class="emoji">
-                            Hi, Elias
+                            Oi, Elias
 						</p>
 						<div class="check">
 							<span>4:00 PM</span>
@@ -29,7 +29,7 @@
 				<div class="chat-l">
 					<div class="mess">
 						<p>
-                            Oh! hi <img src="imagens/chat/emoji-2.png" class="emoji">
+                            Oh! Oi <img src="imagens/chat/emoji-2.png" class="emoji">
 						</p>
 						<div class="check">
 							<span>4:00 PM</span>
@@ -42,7 +42,7 @@
 					<div class="sp"></div>
 					<div class="mess mess-r">
 						<p>
-                           How are you doing?
+                           Como você esta?
 						</p>
 						<div class="check">
 							<span>4:00 PM</span>
@@ -52,7 +52,7 @@
 				</div>
 				<div class="chat-l">
 					<div class="mess">
-					    <p>I'm doing alright. How about you?</p>
+					    <p>Estou bem e você?</p>
 						<div class="check">
 							<span>4:00 PM</span>
 						</div>
@@ -64,7 +64,7 @@
 					<div class="sp"></div>
 					<div class="mess mess-r">
 						<p>
-                           Not too bad. The weather is great isn't it?
+                           Estou bem. E aquele pastor alemão, esta a venda ainda?
 						</p>
 						<div class="check">
 							<span>4:00 PM</span>
@@ -75,7 +75,7 @@
 				<div class="chat-l">
 					<div class="mess">
 						<p>
-                            Yes. It's absolutely beautiful today.
+                            Sim. Esta por 1500 reais.
 						</p>
 						<div class="check">
 							<span>4:00 PM</span>
@@ -97,7 +97,7 @@
 				<div class="chat-r">
 					<div class="sp"></div>
 					<div class="mess mess-r">
-						<p>I wish it was like this more frequently.</p>
+						<p>E como eu faço para pegar ele?</p>
 						<div class="check">
 							<span>4:00 PM</span>
 							<img src="imagens/chat/check-2.png">
@@ -107,7 +107,7 @@
 				<div class="chat-l">
 					<div class="mess">
 						<p>
-                           Me too. <img src="imagens/chat/heart.png"  class="emoji">
+                           Podemos se encotrar no centro, em frente o banco bradesco. <img src="imagens/chat/heart.png"  class="emoji">
 						</p>
 						<div class="check">
 							<span>4:00 PM</span>
@@ -119,7 +119,7 @@
 					<div class="sp"></div>
 					<div class="mess mess-r">
 						<p>
-                           So where are you going now?
+                           Beleza, aceita cartão ou só dinheiro?
 						</p>
 						<div class="check">
 							<span>4:00 PM</span>

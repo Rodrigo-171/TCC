@@ -10,9 +10,6 @@
     
     <div class="button-perfil">
         <div>
-            <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>
-        </div>
-        <div>
             <a href="php/deslogar.php"><i class="fas fa-sign-out-alt"></i><br>Sair</a>
         </div>
         

@@ -9,7 +9,7 @@
 
     <div class="button-perfil">
         <div>
-            <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>
+            <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>       
         </div>
         <div>
             <a href="php/deslogar.php"><i class="fas fa-sign-out-alt"></i><br>Sair</a>
@@ -73,7 +73,7 @@
     </section>
 
     <div class="button-perfil2">
-        <input class="bottom-TE2" type="submit" value="Cancelar">
         <input class="bottom-TE2" type="submit" value="Salvar">
+        <input class="bottom-TE2" type="submit" value="Cancelar">
     </div>
 </div>
