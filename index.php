@@ -2,8 +2,8 @@
 <?php
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
-    //$page = $url[2]; // URL Local
-     $page = $url[1]; // URL Online
+    $page = $url[2]; // URL Local
+    //$page = $url[1]; // URL Online
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {

@@ -1,5 +1,4 @@
 <?php
-$user = $_SESSION['user_logado'];
 include_once("php/conexao.php");
 
 ?>
@@ -37,7 +36,7 @@ include_once("php/conexao.php");
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 					<li><a href="administrativo">Usuários</a></li>
-					<li><a href="#about">Vendas</a></li>
+					<li><a href="#about">Doações</a></li>
 					<li><a href="php/deslogar.php">Sair</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -106,7 +105,7 @@ include_once("php/conexao.php");
 							<td><?php echo $row_usuario['nascimento_usu'] ?></td>
 							
 							<td>
-								<a href="editar-usuario" type="button" class="btn btn-xs btn-warning">Editar</a>
+								<a href="pages/editar-usuario.php?p=editar&usuario=<?php echo $row_usuario['cod_usu'];?>" type="button" class="btn btn-xs btn-warning">Editar</a>
 								<a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $row_usuario['nome_usu'];?>?'))
 								location.href='php/deletar.php?p=deletar&usuario=<?php echo $row_usuario['cod_usu'];?>';" type="button" class="btn btn-xs btn-danger">Apagar</a>
 							</td>

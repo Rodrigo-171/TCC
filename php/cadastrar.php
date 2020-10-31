@@ -21,25 +21,28 @@ $complemento = mysqli_real_escape_string($conexao, $_POST['compl']);
 $name = mysqli_real_escape_string($conexao, $_POST['fname']); 
 $email = mysqli_real_escape_string($conexao, $_POST['email']); 
 $password = mysqli_real_escape_string($conexao, md5($_POST['password'])); 
+$cpf = mysqli_real_escape_string($conexao, $_POST['cpf']); 
 $sexo = mysqli_real_escape_string($conexao, $_POST['gen']); 
 $telefone = mysqli_real_escape_string($conexao, str_replace(['(',')', ' ', '-'], '', $_POST['cellphone']));
 $nascimento = mysqli_real_escape_string($conexao, $_POST['birthday']); //Substituir pelo POST, tem que transformar em data americana
 
-$queryEndereco = "INSERT INTO `enderecos` (`rua`, `numero`, `bairro`, `cidade`, `estado`, `cep`, `complemento`) VALUES ('$rua', '$numero', '$bairro', '$cidade', '$estado', '$cep', '$complemento')";
-$resultEndereco = mysqli_query($conexao, $queryEndereco);
-if($resultEndereco){
-    $query_get_cod_endereco = "SELECT LAST_INSERT_ID() as cod_endereco;";
-    $result_get_cod_endereco = mysqli_query($conexao, $query_get_cod_endereco);
-    $row_cod_endereco = mysqli_fetch_assoc($result_get_cod_endereco);
-    $cod_endereco = $row_cod_endereco['cod_endereco'];
-    
-    #foto tem que fazer o upload depois pegunta que eu ajuda a fazer.
-    $foto = 'fotoPerfil.jpg';
-    
-    $queryUsuario = "INSERT INTO `usuario` (`cod_tipo_usu`, `nome_usu`, `email_usu`, `senha_usu`, `genero_usu`, `celular_usu`, `nascimento_usu`, `imagem_usu`, `cod_endereco`, `cod_status_usu`) VALUES (2, '$name', '$email', '$password', '$sexo', $telefone, '$nascimento', '$foto', $cod_endereco, 'A')";
-    $resultUsuario = mysqli_query($conexao, $queryUsuario);
+#foto tem que fazer o upload depois pegunta que eu ajuda a fazer.
+$foto = 'fotoPerfil.jpg';
 
-    if($resultUsuario){
+$queryUsuario = "INSERT INTO `usuario` (`cod_tipo_usu`, `nome_usu`, `email_usu`, `senha_usu`, `cpf`, `genero_usu`, `celular_usu`, `nascimento_usu`, `imagem_usu`, `cod_status_usu`) VALUES (2, '$name', '$email', '$password', '$cpf', '$sexo', $telefone, '$nascimento', '$foto', 'A')";
+$resultUsuario = mysqli_query($conexao, $queryUsuario);
+
+
+if($resultUsuario){
+    $query_get_cod_usu = "SELECT LAST_INSERT_ID() as cod_usu;";
+    $result_get_cod_usu = mysqli_query($conexao, $query_get_cod_usu);
+    $row_cod_usu = mysqli_fetch_assoc($result_get_cod_usu);
+    $cod_usu = $row_cod_usu['cod_usu'];
+
+    $queryEndereco = "INSERT INTO `enderecos` (`rua`, `numero`, `bairro`, `cidade`, `estado`, `cep`, `cod_usu`, `complemento`) VALUES ('$rua', '$numero', '$bairro', '$cidade', '$estado', '$cep', '$cod_usu', '$complemento')";
+    $resultEndereco = mysqli_query($conexao, $queryEndereco);
+
+    if($resultEndereco){
         header('Location: ../login');
         exit();
     }else{

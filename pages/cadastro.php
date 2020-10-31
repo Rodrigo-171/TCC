@@ -15,6 +15,7 @@
                 <li class="um">
                     <input type="email" id="email" name="email" placeholder="E-mail" >
                     <input type="password" id="password" name="password" placeholder="Senha" >
+                    <input type="text" id="cpf" name="cpf" placeholder="CPF | Apenas números" >
                 </li>
 
                 <li class="dois">

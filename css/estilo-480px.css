@@ -111,6 +111,7 @@ li.dois input {
     height: 30px;
     border-radius: 10px;
     padding: 5px;
+    color: #666;
 }
 li.um input {
     margin: 5px;
@@ -118,20 +119,24 @@ li.um input {
     height: 30px;
     border-radius: 10px;
     padding: 5px;
+    color: #666;
 }
 li.um {
     display: inline-grid;
     width: 100%;
+    color: #666;
 }
 select.estados {
     height: 30px;
     width: 50%;
     margin: 5px;
+    color: #666;
 }
 select.gen {
     height: 30px;
     margin: 5px;
     width: 45%;
+    color: #666;
 }
 
 

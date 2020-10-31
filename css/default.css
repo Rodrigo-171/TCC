@@ -17,6 +17,11 @@ body{
     margin: 0 auto;
 }
 
+.form-cadas {
+    text-align: center;
+    margin: 0 auto;
+}
+
 .inp-login {
     width: 85%;
     height: 40px;

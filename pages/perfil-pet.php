@@ -13,7 +13,8 @@
             <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>
         </div>
         <div>
-            <a type="submit"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
+            <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $row_usuario['nome_usu'];?>?'))
+			location.href='php/deletar.php" type="submit"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
         </div>
     </div>
     

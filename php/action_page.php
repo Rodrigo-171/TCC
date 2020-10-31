@@ -15,7 +15,7 @@ $senha_usu = mysqli_real_escape_string($conexao, $_POST['lname']);
 
 #md5 função do mysql
 #query vai verificar no mysql se o login está correto ou não
-$query = "select * from usuario inner join enderecos on enderecos.cod_endereco = usuario.cod_endereco where email_usu = '$nome_usu' and senha_usu = md5('$senha_usu')";
+$query = "select * from usuario inner join enderecos on enderecos.cod_usu = usuario.cod_usu where email_usu = '$nome_usu' and senha_usu = md5('$senha_usu')";
 
 $result = mysqli_query($conexao, $query);
 
