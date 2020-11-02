@@ -14,7 +14,8 @@
         </div>
         
         <div>
-            <a href="php/apagar-usuario.php"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
+            <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $user['nome_usu'] ?>?'))
+			location.href='php/apagar-usuario.php?p=deletar&usuario=<?php echo $user['cod_usu'];?>';"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
         </div>
         
     </div>

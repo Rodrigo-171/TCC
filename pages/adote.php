@@ -1,4 +1,6 @@
-<?php $user = $_SESSION['user_logado']; ?>
+<?php 
+include_once("php/conexao.php")
+?>
 <header>
     <div class="div-header-adote">
         <div class="search-box">
@@ -13,15 +15,11 @@
     <section class="section-post">
         <div class="div-header-post">
             <img class="foto-icone" src="imagens/fotos_usuario/fotoPerfil.jpg" alt=""> <!-- img do perfil do usuario-->
-            <p><?php echo $user['nome_usu']?></p><!-- nome do usuario-->
-            <i onclick="abrirModalDenuncia()" class="fas fa-ellipsis-v"></i>
-            
+            <p>Rafel</p><!-- nome do usuario-->
+            <i onclick="abrirAlert()" class="fas fa-ellipsis-v"></i>
         </div>
-        <!-- janela de denuncias-->
         
-
         <img class="img-post" src="imagens/fotos/1.jpg" alt=""><!-- img do animal-->
-        
         <button onclick="abrirModalPet()">Ver mais</button>
         <button>Adotar</button>
         <div class="bg-modal-pet" id="modal-pet">
@@ -30,26 +28,21 @@
                     <h2>Informações</h2>
                     <ul class="ul-pai">
                         <ul class="ul-left">
-                            <li>Nome: Zeus</li>
-                            <li>Especie: Cachorro</li>
-                            <li>Raça: Vira-lata</li>
+                            <li>Nome: </li>
+                            <li>Especie: </li>
+                            <li>Raça: </li>
                         </ul>
 
                         <ul class="ul-right">
-                            <li>Idade: 4 anos</li>
-                            <li>Sexo: Macho</li>
+                            <li>Idade: </li>
+                            <li>Sexo: </li>
                             
                         </ul>
                     </ul>
             </div>
         </div>
     </section>
-
+        
+    <!-- janela de denuncias-->
     
-    <div class="bg-modal-denuncia" id="modal-denuncia">
-        <div class="modal-denuncia">
-            <button class="button-denuncia">Denunciar</button>
-            <button class="button-denuncia" onclick="fecharModalDenuncia()">Cancelar</button>
-        </div>
-    </div>
 </main>

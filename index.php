@@ -65,6 +65,9 @@
         case 'administrativo':
             $titulo = "Painel Administrador | NetworkPet";
             break;
+        case 'editar-usuario':
+            $titulo = "Editar Usuário | NetworkPet";
+            break;
         default:
             $titulo = 'Home | NetworkPet';
             break;
@@ -199,6 +202,12 @@
                 break;
             case 'editar-usuario':
                 require('./pages/editar-usuario.php');
+                break;
+            case 'administrativo-denuncia':
+                require('./pages/administrativo-denuncia.php');
+                break;
+            case 'form-denuncia':
+                require('./pages/form-denuncia.php');
                 break;
             default:
                 require('./pages/erro404.html'); //Caso não ache a pagina cai na pagina de erro
@@ -597,11 +606,8 @@
 
 <!-- janela denuncia-->
 <script  type="text/javascript">
-    function abrirModalDenuncia() {
-        document.getElementById('modal-denuncia').style.top = "0";
-    }
-    function fecharModalDenuncia() {
-        document.getElementById('modal-denuncia').style.top="-100%";
+    function abrirAlert(){
+        window.alert('Infelizmente nosso sistema de denúncia não foi finalizado')
     }
 </script>
 

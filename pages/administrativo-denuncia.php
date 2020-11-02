@@ -37,7 +37,9 @@ include_once("php/conexao.php");
 				<ul class="nav navbar-nav">
 					<li><a href="administrativo">Usuários</a></li>
 					<li><a href="administrativo-denuncia">Denúncias</a></li>
-					<li><a href="#">Pet's cadastrados</a></li>
+					<li><a href="#">Pet's para adoção</a></li>
+					<li><a href="#">Pet's para venda</a></li>
+					<li><a href="#">Pet's para namoro</a></li>
 					<li><a href="#">Suporte financeiro</a></li>
 					<li><a href="php/deslogar.php">Sair</a></li>
 				</ul>
@@ -66,14 +68,6 @@ include_once("php/conexao.php");
 			$result_usuarios = "SELECT * FROM usuario LIMIT $inicio, $qnt_result_pg";
 			$resultado_usuarios = mysqli_query($conexao, $result_usuarios);
 			$row_usuario = mysqli_fetch_assoc($resultado_usuarios);
-
-			//Definindo o sexo
-			$sexo['M'] = "Masculino";
-			$sexo['F'] = "Feminino";
-
-			//Definindo Cod_tipo_usu
-			$cod_tipo_usu[1] = "Administrator";
-			$cod_tipo_usu[2] = "Básico";
 		?>
 
 		
@@ -82,13 +76,11 @@ include_once("php/conexao.php");
 				<table class="table">
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Nome</th>
-							<th>Email</th>
-							<th>Nivel de acesso</th>
-							<th>Celular</th>
-							<th>Sexo</th>
-							<th>Nascimento</th>
+							<th>ID Denuncia</th>
+							<th>Usuario Denuncia</th>
+							<th>Usuario Denunciado</th>
+							<th>Descrição Denuncia</th>
+							<th>Data e hora</th>
 							<th>Ações</th>
 						</tr>
 					</thead>
@@ -107,9 +99,8 @@ include_once("php/conexao.php");
 							<td><?php echo $row_usuario['nascimento_usu'] ?></td>
 							
 							<td>
-								<a href="pages/editar-usuario.php?p=editar&usuario=<?php echo $row_usuario['cod_usu'];?>" type="button" class="btn btn-xs btn-warning">Editar</a>
-								<a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $row_usuario['nome_usu'];?>?'))
-								location.href='php/deletar.php?p=deletar&usuario=<?php echo $row_usuario['cod_usu'];?>';" type="button" class="btn btn-xs btn-danger">Apagar</a>
+								<a href="" class="btn btn-xs btn-warning">Editar</a>
+								<a href="" class="btn btn-xs btn-danger">Apagar</a>
 							</td>
 						</tr>
 						<?php }while($row_usuario = mysqli_fetch_assoc($resultado_usuarios));?>

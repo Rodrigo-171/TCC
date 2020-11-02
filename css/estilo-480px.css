@@ -600,7 +600,7 @@ body{
     transition: 350ms;
 }
 
-.modal{
+.modal-ong{
     width: 80%;
     height: 80%;
     background-image: url(../imagens/BG/linha-abstrata.gif);
@@ -614,7 +614,7 @@ body{
     text-align: center;
 }
 
-.modal span{
+.modal-ong span{
     float: right;
     font-size: 22px;
     color: #000;
@@ -623,12 +623,12 @@ body{
     cursor: pointer;
 }
 
-.modal span:hover{
+.modal-ong span:hover{
     color: #990000;
     transition: 350ms;
 }
 
-.modal button{
+.modal-ong button{
     width: 50%;
     height: 35px;
     border: none;
@@ -641,7 +641,7 @@ body{
     margin-top: 5%;
 }
 
-.modal a{
+.modal-ong a{
     text-decoration: none;
     color: white;
 }
@@ -1421,6 +1421,12 @@ main{
     padding: 10px;
     display: inline-block;
 }
+
+.modal-denuncia a{
+    text-decoration: none;
+    border: none;
+}
+
 .button-denuncia{
     width: 100%;
     height: 45px;
@@ -1429,7 +1435,6 @@ main{
     border-bottom: 1px solid #ccc;
     font-weight: bolder;
     color: red;
-
 }
 
 .div-header-adote{

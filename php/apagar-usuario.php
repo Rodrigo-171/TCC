@@ -1,8 +1,23 @@
-<?php
-session_start();
-include_once("conexao.php");
+<?php 
 
-$cod_usu= $_GET['cod_usu'];
-$result_usuario = "DELETE FROM usuario WHERE cod_usu = '$cod_usu' ";
-$resultado_usuario = mysqli_query($conexao, $result_usuario);
+    include('conexao.php');
+    $cod_usu = intval($_GET['usuario']);
+
+    $sql_code = "DELETE FROM usuario WHERE cod_usu = '$cod_usu'";
+   
+    $sql_query = mysqli_query($conexao, $sql_code);
+
+    if($sql_query)
+        echo "
+        <script>
+        alert('O usuário foi deletado com sucesso!')
+        location.href='../cadastro'
+        </script>";
+    else
+    echo "
+    <script>
+        alert('Não foi possível deletar o usuário.');
+        location.href='../perfil-pessoa';
+    </script>
+    "
 ?>
