@@ -2,8 +2,8 @@
 <?php
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
-    //$page = $url[2]; // URL Local
-    $page = $url[1]; // URL Online
+    $page = $url[2]; // URL Local
+    //$page = $url[1]; // URL Online
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {
@@ -203,8 +203,8 @@
             case 'editar-usuario':
                 require('./pages/editar-usuario.php');
                 break;
-            case 'administrativo-denuncia':
-                require('./pages/administrativo-denuncia.php');
+            case 'administrativo-pet':
+                require('./pages/administrativo-pet.php');
                 break;
             case 'form-denuncia':
                 require('./pages/form-denuncia.php');
@@ -411,7 +411,7 @@
                     document.getElementById("passo-5").classList.add("passo-ativo");
                     document.getElementById("botao-passo4").style.display = "none";
                     document.getElementById("botao-passo5").style.display = "block";
-                    document.getElementById("passo").style.height = document.getElementById("passo-4").offsetHeight+'px';
+                    document.getElementById("passo").style.height = document.getElementById("passo-5").offsetHeight+'px';
                     break;
                 case 6:
                     document.getElementById("passo-5").classList.remove("passo-ativo");
@@ -420,7 +420,7 @@
                     document.getElementById("passo-6").classList.add("passo-ativo");
                     document.getElementById("botao-passo5").style.display = "none";
                     document.getElementById("botao-passo6").style.display = "block";
-                    document.getElementById("passo").style.height = document.getElementById("passo-4").offsetHeight+'px';
+                    document.getElementById("passo").style.height = document.getElementById("passo-6").offsetHeight+'px';
                     break;
                 case 7:
                     document.getElementById("passo-6").classList.remove("passo-ativo");
@@ -429,7 +429,7 @@
                     document.getElementById("passo-7").classList.add("passo-ativo");
                     document.getElementById("botao-passo6").style.display = "none";
                     document.getElementById("botao-salvar").style.display = "block";
-                    document.getElementById("passo").style.height = document.getElementById("passo-4").offsetHeight+'px';
+                    document.getElementById("passo").style.height = document.getElementById("passo-7").offsetHeight+'px';
                     break;
                 default:
                     break;

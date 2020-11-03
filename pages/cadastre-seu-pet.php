@@ -74,16 +74,6 @@
 
             <div id="passo-6" class="div-cadastro depois">
                 <div class="div-cadastro-titulo">
-                    <h2 class="h2-cadastro">Escolha as fotos</h2>
-                    <img src="imagens/undraw/undraw_Camera.png" class="img-cadastro2">
-                </div>
-                <div class="div-cadastro-foto">
-                    <button class="button-default">Escolher fotos<button>
-                </div>
-            </div>
-
-            <div id="passo-7" class="div-cadastro depois">
-                <div class="div-cadastro-titulo">
                     <h2 class="h2-cadastro">O animal é para Venda, Adoção ou Namoropet?</h2>
                     <label for="venda" class="button-default">Venda</label>
                     <input type="radio" name="paraQue" id="venda" value="venda" onselect="show_hide()">
@@ -97,6 +87,16 @@
                 </div>
             </div>
 
+            <div id="passo-7" class="div-cadastro depois">
+                <div class="div-cadastro-titulo">
+                    <h2 class="h2-cadastro">Escolha as fotos</h2>
+                    <img src="imagens/undraw/undraw_Camera.png" class="img-cadastro2">
+                </div>
+                <div class="div-cadastro-foto">
+                    
+                </div>
+            </div>
+
         </div>
 
         
@@ -106,7 +106,7 @@
             <button type="button" id="botao-passo3" onclick="mudarPasso(4)">Proximo</button>
             <button type="button" id="botao-passo4" onclick="mudarPasso(5)">Proximo</button>
             <button type="button" id="botao-passo5" onclick="mudarPasso(6)">Proximo</button>
-            
+            <button type="button" id="botao-passo6" onclick="mudarPasso(7)">Proximo</button>  
             
             <button type="submit" id="botao-salvar">Salvar</button>
         </div>

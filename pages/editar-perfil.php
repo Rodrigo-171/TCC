@@ -1,15 +1,44 @@
-<?php $user = $_SESSION['user_logado']; ?>
+<?php 
+$user = $_SESSION['user_logado']; 
+$cod_usu = $user['cod_usu'];
+include("php/conexao.php");
+
+$msg = false;
+if(isset($_FILES['arquivo'])){
+    $arquivo = $_FILES['arquivo']['name'];
+    $extensao = strtolower(pathinfo($arquivo, PATHINFO_EXTENSION));
+    
+    $novo_nome = md5(time()).".".$extensao;
+    
+    $diretorio = "upload/";
+    
+    move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $novo_nome);
+    
+    $sql_code = "INSERT INTO foto(cod_foto, url_foto, cod_animal, cod_usu, cod_status_foto, data) VALUES('','$novo_nome', '', '$cod_usu', 'U', NOW())";
+    
+    if(mysqli_query($conexao, $sql_code))
+        $msg = "Arquivo enviado com sucesso!";
+    else
+        $msg = "Falha ao enviar arquivo!";
+}
+$sql_busca = "SELECT * FROM foto WHERE cod_usu = '$cod_usu'";
+//var_dump($sql_busca); die;
+$mostrar = mysqli_query($conexao, $sql_busca);
+?>
+
+
 <div class="body-perfil-pet">
     
     <main class="div-foto">
+       
         <div>
             <img src="imagens/fotos_usuario/<?php echo $user['imagem_usu'] ?>">
         </div>
     </main>
-
-    <div class="button-perfil">
+<form action="editar-perfil" method="post" enctype="multipart/form-data">
+    <div class="button-perfil">        
         <div>
-            <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>       
+            <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>
         </div>
         <div>
             <a href="php/deslogar.php"><i class="fas fa-sign-out-alt"></i><br>Sair</a>
@@ -73,7 +102,8 @@
     </section>
 
     <div class="button-perfil2">
-        <input class="bottom-TE2" type="submit" value="Salvar">
+        <input class="bottom-TE2" type="submit" value="Enviar">   
         <input class="bottom-TE2" type="submit" value="Cancelar">
     </div>
+</form>
 </div>

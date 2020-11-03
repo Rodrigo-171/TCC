@@ -41,7 +41,7 @@ include_once("php/conexao.php");
     	</nav>
 
 		<div class="container mt-3">
-			<h2>Usuários</h2>
+			<h2>Animais cadastrados</h2>
 			<span id="conteudo"></span>
 		</div>
 		<script>
@@ -56,7 +56,7 @@ include_once("php/conexao.php");
 					pagina : pagina,
 					qnt_result_pg : qnt_result_pg
 				}
-				$.post('php/listar_usuario.php', dados ,function(retorna){
+				$.post('php/listar_pet.php', dados ,function(retorna){
 					//Substitui o valor no seletor id="conteudo"
 					$("#conteudo").html(retorna);
 				});

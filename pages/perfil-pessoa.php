@@ -1,4 +1,6 @@
-<?php $user = $_SESSION['user_logado']; ?>
+<?php 
+    $user = $_SESSION['user_logado'];
+?>
 
 <div class="body-perfil-pet">
     
