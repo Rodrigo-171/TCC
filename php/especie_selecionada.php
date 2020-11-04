@@ -9,7 +9,6 @@
 
     $result = mysqli_query($conexao, $query);
     $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
     if($result){
         echo json_encode(['success' => true, 'data' => $data]);
     }else{

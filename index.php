@@ -2,8 +2,8 @@
 <?php
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
-    //$page = $url[2]; // URL Local
-    $page = $url[1]; // URL Online
+    $page = $url[2]; // URL Local
+    //$page = $url[1]; // URL Online
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {
@@ -262,6 +262,7 @@
                 success: function(resposta){
                     var racas = JSON.parse(resposta);
                     localStorage.setItem('racas', JSON.stringify(racas.data));
+                    console.log(racas);
                 },
                 error : function(erro){
                     console.log(erro);
@@ -445,138 +446,15 @@
             }
             botao.classList.add("ativo");
             botao.nextSibling.nextSibling.checked = true;
-            var opcoes;
-            switch (animal) {
-                case 'cachorro':
-                    opcoes = `
+            var opcoes = `
                 <div class="div-cadastro-titulo">
                     <h2 class="h2-cadastro">Qual a raça do animal?</h2>
+                    <img class="img-cadastro" src="imagens/all-pet.png">
                 </div>
                 <div class="div-cadastro-opcao">
-                    <img class="img-pets" src="imagens/cachorro/cachorro.gif">
                     <select name="raca" class="select-raca">
                         <option value="0">Raça</option>
-                        <option value="Vira-lata">Vira-Lata</option>
-                        <option value="Basset Hound">Basset Hound </option>
-                        <option value="Beagle">Beagle </option>
-                        <option value="Beagle Harrier">Beagle Harrier </option>
-                        <option value="Bearded Collie">Bearded Collie </option>
-                        <option value="Bedlington Terrier">Bedlington Terrier </option>
-                        <option value="Bichon Frisé">Bichon Frisé </option>
-                        <option value="Bloodhound">Bloodhound </option>
-                        <option value="Bobtail">Bobtail </option>
-                        <option value="Boiadeiro Australiano">Boiadeiro Australiano </option>
-                        <option value="Boiadeiro Bernês">Boiadeiro Bernês </option>
-                        <option value="Border Collie ">Border Collie </option>
-                        <option value="BorzoiBorder Terrier">Border Terrier </option>
-                        <option value="Borzoi">Borzoi </option>
-                        <option value="Boston">Boston Terrier </option>
-                        <option value="Boxer">Boxer </option>
-                        <option value="Buldogue Francês">Buldogue Francês </option>
-                        <option value="Buldogue Inglês">Buldogue Inglês </option>
-                        <option value="Bull Terrier">Bull Terrier </option>
-                        <option value="Bulmastife">Bulmastife </option>
-                        <option value="Cairn Terrier">Cairn Terrier </option>
-                        <option value="Cane Corso">Cane Corso </option>
-                        <option value="Cão de Água Português">Cão de Água Português </option>
-                        <option value="Cão de Crista Chinês">Cão de Crista Chinês </option>
-                        <option value="Cavalier King Charles Spaniel">Cavalier King Charles Spaniel </option>
-                        <option value="Chesapeake Bay Retriever">Chesapeake Bay Retriever </option>
-                        <option value="Chihuahua">Chihuahua </option>
-                        <option value="Chow Chow">Chow Chow </option>
-                        <option value="Cocker Spaniel Americano">Cocker Spaniel Americano </option>
-                        <option value="Cocker Spaniel Inglês">Cocker Spaniel Inglês </option>
-                        <option value="Collie">Collie </option>
-                        <option value="Coton de Tuléar">Coton de Tuléar </option>
-                        <option value="Dachshund">Dachshund </option>
-                        <option value="Dálmata">Dálmata </option>
-                        <option value="Dandie Dinmont Terrier">Dandie Dinmont Terrier </option>
-                        <option value="Dobermann">Dobermann </option>
-                        <option value="Dogo Argentino">Dogo Argentino </option>
-                        <option value="Dogue Alemão">Dogue Alemão </option>
-                        <option value="Fila Brasileiro">Fila Brasileiro </option>
-                        <option value="Fox Terrier">Fox Terrier</option>
-                        <option value="Foxhound Inglês">Foxhound Inglês </option>
-                        <option value="Galgo Escocês">Galgo Escocês </option>
-                        <option value="Galgo Irlandês">Galgo Irlandês </option>
-                        <option value="Golden Retriever">Golden Retriever </option>
-                        <option value="Grande Boiadeiro Suiço">Grande Boiadeiro Suiço </option>
-                        <option value="Greyhound">Greyhound </option>
-                        <option value="Grifo da Bélgica">Grifo da Bélgica </option>
-                        <option value="Husky Siberiano">Husky Siberiano </option>
-                        <option value="Jack Russell Terrier">Jack Russell Terrier </option>
-                        <option value="King Charles">King Charles </option>
-                        <option value="Komondor">Komondor </option>
-                        <option value="Labradoodle">Labradoodle </option>
-                        <option value="Labrador">Labrador Retriever </option>
-                        <option value="Lakeland">Lakeland Terrier </option>
-                        <option value="Leonberger">Leonberger </option>
-                        <option value="Lhasa Apso">Lhasa Apso </option>
-                        <option value="Lulu da Pomerânia">Lulu da Pomerânia </option>
-                        <option value="Malamute do Alasca">Malamute do Alasca </option>
-                        <option value="Maltês">Maltês </option>
-                        <option value="Mastife">Mastife </option>
-                        <option value="Mastim Napolitano">Mastim Napolitano </option>
-                        <option value="Mastim Tibetano">Mastim Tibetano </option>
-                        <option value="Norfolk Terrier">Norfolk Terrier </option>
-                        <option value="Norwich Terrier">Norwich Terrier </option>
-                        <option value="Papillon">Papillon </option>
-                        <option value="Pastor Alemão">Pastor Alemão </option>
-                        <option value="Pastor Australiano">Pastor Australiano </option>
-                        <option value="Pinscher Miniatura">Pinscher Miniatura </option>
-                        <option value="Poodle">Poodle </option>
-                        <option value="Pug">Pug </option>
-                        <option value="Rottweiler">Rottweiler </option>
-                        <option value="ShihTzu">ShihTzu </option>
-                        <option value="Silky Terrier">Silky Terrier </option>
-                        <option value="Skye Terrier">Skye Terrier </option>
-                        <option value="Staffordshire Bull Terrier">Staffordshire Bull Terrier </option>
-                        <option value="Terra Nova">Terra Nova </option>
-                        <option value="Terrier Escocês">Terrier Escocês </option>
-                        <option value="Tosa">Tosa </option>
-                        <option value="Weimaraner">Weimaraner </option>
-                        <option value="Welsh Corgi (Cardigan)">Welsh Corgi (Cardigan) </option>
-                        <option value="Welsh Corgi (Pembroke) ">Welsh Corgi (Pembroke) </option>
-                        <option value="West Highland White Terrier">West Highland White Terrier </option>
-                        <option value="Whippet">Whippet </option>
-                        <option value="Xoloitzcuintli">Xoloitzcuintli </option>
-                        <option value="Yorkshire Terrier">Yorkshire Terrier</option>
-                `;
-                break;
-                case 'gato':
-                    opcoes = `
-                <div class="div-cadastro-titulo">
-                    <h2 class="h2-cadastro">Qual a raça do animal?</h2>
-                </div>
-                <div class="div-cadastro-opcao">
-                    <img class="img-pets" src="imagens/gato/gato.gif">
-                    <select name="raca" class="select-raca">
-                        <option value="0">Raça</option>
-                `;
-                break;
-                case 'coelho':
-                    opcoes = `
-                <div class="div-cadastro-titulo">
-                    <h2 class="h2-cadastro">Qual a raça do animal?</h2>
-                </div>
-                <div class="div-cadastro-opcao">
-                    <img class="img-pets" src="imagens/coelho/coelho.gif">
-                    <select name="raca" class="select-raca">
-                        <option value="0">Raça</option>
-                `;
-                break;
-                case 'roedor':
-                    opcoes = `
-                <div class="div-cadastro-titulo">
-                    <h2 class="h2-cadastro">Qual a raça do animal?</h2>
-                </div>
-                <div class="div-cadastro-opcao">
-                    <img class="img-pets" src="imagens/roedor/roedor.gif">
-                    <select name="raca" class="select-raca">
-                        <option value="0">Raça</option>
-                `;
-                break;
-            }
+            `;
 
             var racas = JSON.parse(localStorage.getItem('racas'));
 
