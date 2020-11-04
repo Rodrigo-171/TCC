@@ -18,9 +18,27 @@
     $raca = mysqli_real_escape_string($conexao, $_POST['raca']);
     $cod_usu = $user['cod_usu'];
 
-    $query = "INSERT INTO `animal` (`nome_animal`, `sexo_animal`, `data_nasc_animal`, `para_que`, `preco_animal`, `cod_raca`, `cod_especie`, `cod_usu`) VALUES ('$nomeAnimal', '$sexo', '$nascimentoAnimal', '$paraQue', $precoAnimal, $raca, $especie, $cod_usu)";
+    $query_especie = "INSERT INTO `especie` (`nome_especie`, `cod_status_especie`) VALUES ('$especie', 'E')";
+    $result_especie = mysqli_query($conexao, $query_especie);
+    
+    if($result_especie){
+        $query_get_cod_especie = "SELECT LAST_INSERT_ID() as cod_especie;";
+        $result_get_cod_especie = mysqli_query($conexao, $query_get_cod_especie);
+        $row_cod_especie = mysqli_fetch_assoc($result_get_cod_especie);
+        $cod_especie = $row_cod_especie['cod_especie'];
+    
+        $query_raca = "INSERT INTO `raca` (`nome_raca`, `cod_especie`, `cod_status_raca`) VALUES ('$raca', '$cod_especie', 'R')";
+        $result_raca = mysqli_query($conexao, $query_raca);
+        if($result_raca){
+            $query_get_cod_raca = "SELECT LAST_INSERT_ID() as cod_raca;";
+            $result_get_cod_raca = mysqli_query($conexao, $query_get_cod_raca);
+            $row_cod_raca = mysqli_fetch_assoc($result_get_cod_raca);
+            $cod_raca = $row_cod_especie['cod_raca'];
 
-    $result = mysqli_query($conexao, $query);
+            $query_animal = "INSERT INTO `animal` (`nome_animal`, `sexo_animal`, `data_nasc_animal`, `para_que`, `preco_animal`, `cod_raca`, `cod_especie`, `cod_usu`) VALUES ('$nomeAnimal', '$sexo', '$nascimentoAnimal', '$paraQue', $precoAnimal, $cod_raca, $cod_especie, $cod_usu)";
+            $result = mysqli_query($conexao, $query_animal);
+        }
+    
 
     if(!$result){
         $_SESSION['animal_nao_cadastrado'] = true;

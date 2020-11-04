@@ -33,7 +33,7 @@ include_once("php/conexao.php");
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 						<li><a href="administrativo">Usuários</a></li>
-						<li><a href="administrativo-pet">Pet's</a></li>
+						<li><a href="administrativo-pet">Animais</a></li>
 						<li><a href="php/deslogar.php">Sair</a></li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -41,7 +41,7 @@ include_once("php/conexao.php");
     	</nav>
 
 		<div class="container mt-3">
-			<h2>Animais cadastrados</h2>
+			<h2>Animais</h2>
 			<span id="conteudo"></span>
 		</div>
 		<script>

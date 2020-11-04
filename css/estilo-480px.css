@@ -829,9 +829,9 @@ body{
     border-radius: 10px;
     font-size: 0.9em;
     display: inline-block;
-    width: auto;
+    width: 200px;
     transition: all .5s;
-    margin-top: 3em;
+    margin: 3em 0em 0em -2em;
 }
 
 .button-default{
