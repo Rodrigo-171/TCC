@@ -35,7 +35,7 @@ $mostrar = mysqli_query($conexao, $sql_busca);
             <img src="imagens/fotos_usuario/<?php echo $user['imagem_usu'] ?>">
         </div>
     </main>
-<form action="editar-perfil" method="post" enctype="multipart/form-data">
+
     <div class="button-perfil">        
         <div>
             <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>
@@ -44,13 +44,14 @@ $mostrar = mysqli_query($conexao, $sql_busca);
             <a href="php/deslogar.php"><i class="fas fa-sign-out-alt"></i><br>Sair</a>
         </div>
         <div>
-            <a type="submit"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
+            <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $user['nome_usu'] ?>?'))
+			location.href='php/apagar-usuario.php?p=deletar&usuario=<?php echo $user['cod_usu'];?>';"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
         </div>
     </div>
 
     <section class="acc-container">
         <h2>Editar informações</h2>
-        <form action="">
+        <form action="php/alterar-perfil.php" method="POST">
             <div class="dados-perfil">
                 <ul class="ul-dados-perfil">
                     <ul class="ul-dados-perfil">
@@ -66,19 +67,22 @@ $mostrar = mysqli_query($conexao, $sql_busca);
                     <hr>
                     <ul class="ul-dados-perfil">
                         <li class="li-perf"><P class="text-perf">CEP</P>
-                            <input type="text" id="fname" name="fname" value="<?php echo $user['cep'] ?>" class="inp-perf2"></li>  
+                            <input type="text" id="fname" name="cep" value="<?php echo $user['cep'] ?>" class="inp-perf2"></li>  
                         <li class="li-perf"><P class="text-perf">Estado</P>
-                            <input type="text" id="fname" name="fname" value="<?php echo $user['estado'] ?>" class="inp-perf2"></li>  
+                            <input type="text" id="fname" name="estado" value="<?php echo $user['estado'] ?>" class="inp-perf2"></li>  
                         <li class="li-perf"><P class="text-perf">Cidade</P>
-                            <input type="text" id="fname" name="fname" value="<?php echo $user['cidade'] ?>" class="inp-perf2"></li>
+                            <input type="text" id="fname" name="cidade" value="<?php echo $user['cidade'] ?>" class="inp-perf2"></li>
                         <li class="li-perf"><P class="text-perf">Bairro</P>
-                            <input type="text" id="fname" name="fname" value="<?php echo $user['bairro'] ?>" class="inp-perf2"></li>
+                            <input type="text" id="fname" name="bairro" value="<?php echo $user['bairro'] ?>" class="inp-perf2"></li>
                         <li class="li-perf"><P class="text-perf">Rua</P>
-                            <input type="text" id="fname" name="fname" value="<?php echo $user['rua'] ?>" class="inp-perf2"></li>
+                            <input type="text" id="fname" name="rua" value="<?php echo $user['rua'] ?>" class="inp-perf2"></li>
                         <li class="li-perf"><P class="text-perf">Número</P>
-                            <input type="text" id="fname" name="fname" value="<?php echo $user['numero'] ?>" class="inp-perf2"></li>
+                            <input type="text" id="fname" name="numero" value="<?php echo $user['numero'] ?>" class="inp-perf2"></li>
                     </ul>
                 </ul>
+                <div class="button-perfil2">
+                    <input class="bottom-TE3" type="submit" value="Salvar">   
+                </div>
             </div>
         </form>
     </section>
@@ -105,5 +109,4 @@ $mostrar = mysqli_query($conexao, $sql_busca);
         <input class="bottom-TE2" type="submit" value="Enviar">   
         <input class="bottom-TE2" type="submit" value="Cancelar">
     </div>
-</form>
 </div>

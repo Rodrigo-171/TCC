@@ -10,10 +10,10 @@
   INNER JOIN raca AS R
   ON A.cod_raca = R.cod_raca
   INNER JOIN especie AS E
-  ON R.cod_especie = E.cod_especie";
+  ON R.cod_especie = E.cod_especie
+  WHERE cod_animal = '$cod_animal'";
   $resultado_pet = mysqli_query($conexao, $result_pet);
   $row_pet = mysqli_fetch_assoc($resultado_pet);
-
 
 ?>
 
@@ -34,7 +34,7 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li><a href="../administrativo">Usuários</a></li>
-				<li><a href="#about">Vendas</a></li>
+				<li><a href="../administrativo-pet">Animais</a></li>
 				<li><a href="../php/deslogar.php">Sair</a></li>
 			</ul>
 		</div><!--/.nav-collapse -->
@@ -79,7 +79,7 @@
 <div class="form-group">
   <label class="col-md-2 control-label" for="Nome">Especie <h11>*</h11></label>  
   <div class="col-md-2">
-  <input id="cpf" disabled name="cpf" class="form-control input-md" required="" type="text" value="<?php echo $row_pet['especie']?>">
+  <input id="especie"  name="especie" class="form-control input-md" required="" readonly="readonly" type="text" value="<?php echo $row_pet['especie']?>">
   </div>
   
   <label class="col-md-1 control-label" for="Nome">Nascimento<h11>*</h11></label>  
@@ -122,7 +122,7 @@
 <div class="form-group">
   <label class="col-md-2 control-label" for="prependedtext">Raça <h11>*</h11></label>
   <div class="col-md-2">
-    <input id="raca" name="raca" class="form-control input-md" required="" type="text" value="<?php echo $row_pet['raca']?>"> 
+    <input id="raca" name="raca" class="form-control input-md" required="" readonly="readonly" type="text" value="<?php echo $row_pet['raca']?>"> 
   </div>
  
 
@@ -131,7 +131,7 @@
     <label class="col-md-2 control-label" for="prependedtext">Preço<h11>*</h11></label>
     <div class="col-md-5">
       <div class="input-group">
-      <input id="raca" name="raca" class="form-control input-md" readonly="readonly" required="" type="text" value="<?php echo $row_pet['preco_animal']?>"> 
+      <input id="preco" name="preco" class="form-control input-md" readonly="readonly" required="" type="text" value="<?php echo $row_pet['preco_animal']?>"> 
       </div>
     </div>
   </div>

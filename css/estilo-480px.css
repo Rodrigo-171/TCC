@@ -1211,6 +1211,17 @@ main{
     margin: 10% 5% 10% 5%;
 }
 
+.bottom-TE3{
+    width: 45%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: orange;
+    color: white;
+    margin: 0 auto;
+}
+
 .li-perf{
     margin: 3% 3% auto;
     width: 100%;

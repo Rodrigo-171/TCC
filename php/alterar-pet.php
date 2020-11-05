@@ -2,27 +2,11 @@
     include('conexao.php');
     
     //Recebendo o post
-    #endereco
-    $rua = $_POST['rua']; 
-    $numero = $_POST['num']; 
-    $bairro = $_POST['bairro']; 
-    $cidade = $_POST['city']; 
-    $estado = $_POST['estado']; 
-    $cep = $_POST['cep']; 
-    $complemento = $_POST['complemento'];
-    #usuario
-    $cod_usu = $_POST['cod_usu'];
+    $cod_animal = $_POST['cod_animal'];
     $name = $_POST['fname'];
-    $email = $_POST['email'];
-    
-    
 
     //Alterando os dados
-    $result_usuario = "UPDATE usuario SET nome_usu = '$name', email_usu = '$email' WHERE cod_usu = '$cod_usu'";                                 
-    $resultado_usuario = mysqli_query($conexao, $result_usuario);
-
-    $result_endereco = "UPDATE enderecos SET cep = '$cep', numero = '$numero' WHERE cod_usu = '$cod_usu'";                                 
-    $resultado_endereco = mysqli_query($conexao, $result_endereco);
-    
-    header("Location: ../administrativo");
+    $result_animal = "UPDATE animal SET nome_animal = '$name' WHERE cod_animal = '$cod_animal'";                                 
+    $resultado_animal = mysqli_query($conexao, $result_animal);
+    header("Location: ../administrativo-pet");
 ?>

@@ -8,7 +8,7 @@ $inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;
 
 //consultar banco
 $result_pet = "SELECT nome_raca AS raca,
-cod_animal, nome_animal, sexo_animal, data_nasc_animal, preco_animal, cod_status_animal AS animal,
+cod_animal, nome_animal, sexo_animal, data_nasc_animal, preco_animal, para_que, cod_status_animal AS animal,
 nome_especie AS especie
 FROM animal AS A
 INNER JOIN raca AS R
@@ -51,7 +51,7 @@ if(($resultado_pet) AND ($resultado_pet->num_rows !=0)){
             <td><?php echo $row_pet['sexo_animal'];?></td>
             <td><?php echo $row_pet['raca'];?></td>
             <td><?php echo $row_pet['data_nasc_animal'];?></td>
-            <td><?php echo $row_pet['animal'];?></td>
+            <td><?php echo $row_pet['para_que'];?></td>
             <td><?php echo $row_pet['preco_animal'];?></td>
             <td>
 				<a href="pages/editar-pet.php?p=editar&animal=<?php echo $row_pet['cod_animal'];?>" class="btn btn-xs btn-warning">Editar</a>
