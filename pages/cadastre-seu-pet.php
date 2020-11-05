@@ -86,7 +86,7 @@
                     <input id="preco-animal" type="text" name="precoAnimal" placeholder="Valor do animal">
                 </div>
             </div>
-
+            <!--
             <div id="passo-7" class="div-cadastro depois">
                 <div class="div-cadastro-titulo">
                     <h2 class="h2-cadastro">Escolha as fotos</h2>
@@ -95,7 +95,7 @@
                 <div class="div-cadastro-foto">
                     
                 </div>
-            </div>
+            </div>-->
 
         </div>
 
@@ -106,7 +106,7 @@
             <button type="button" id="botao-passo3" onclick="mudarPasso(4)">Proximo</button>
             <button type="button" id="botao-passo4" onclick="mudarPasso(5)">Proximo</button>
             <button type="button" id="botao-passo5" onclick="mudarPasso(6)">Proximo</button>
-            <button type="button" id="botao-passo6" onclick="mudarPasso(7)">Proximo</button>  
+            
             
             <button type="submit" id="botao-salvar">Salvar</button>
         </div>

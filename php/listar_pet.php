@@ -8,13 +8,13 @@ $inicio = ($pagina * $qnt_result_pg) - $qnt_result_pg;
 
 //consultar banco
 $result_pet = "SELECT nome_raca AS raca,
-cod_animal, nome_animal, sexo_animal, ano_nasc_animal, preco_animal, cod_status_animal AS animal,
+cod_animal, nome_animal, sexo_animal, data_nasc_animal, preco_animal, cod_status_animal AS animal,
 nome_especie AS especie
 FROM animal AS A
 INNER JOIN raca AS R
 ON A.cod_raca = R.cod_raca
 INNER JOIN especie AS E
-ON A.cod_especie = E.cod_especie
+ON R.cod_especie = E.cod_especie
 LIMIT $inicio, $qnt_result_pg";
 $resultado_pet = mysqli_query($conexao, $result_pet);
 
@@ -50,11 +50,11 @@ if(($resultado_pet) AND ($resultado_pet->num_rows !=0)){
             <td><?php echo $row_pet['especie'];?></td>
             <td><?php echo $row_pet['sexo_animal'];?></td>
             <td><?php echo $row_pet['raca'];?></td>
-            <td><?php echo $row_pet['ano_nasc_animal'];?></td>
+            <td><?php echo $row_pet['data_nasc_animal'];?></td>
             <td><?php echo $row_pet['animal'];?></td>
             <td><?php echo $row_pet['preco_animal'];?></td>
             <td>
-				<a href="pages/editar-usuario.php?p=editar&usuario=<?php echo $row_usuario['cod_usu'];?>" class="btn btn-xs btn-warning">Editar</a>
+				<a href="pages/editar-pet.php?p=editar&animal=<?php echo $row_pet['cod_animal'];?>" class="btn btn-xs btn-warning">Editar</a>
 				<a href="javascript: if(confirm('Tem certeza que deseja deletar o animal <?php echo $row_pet['nome_animal'];?>?'))
 				location.href='php/deletar-pet.php?p=deletar&animal=<?php echo $row_pet['cod_animal'];?>';" type="button" class="btn btn-xs btn-danger">Apagar</a>
 			</td>

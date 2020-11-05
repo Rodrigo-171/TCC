@@ -2,8 +2,8 @@
 <?php
     session_start(); // inicia a variavel $_SESSION
     $url = explode('/', $_SERVER['REQUEST_URI']); //pega a url e transforma em uma array
-    $page = $url[2]; // URL Local
-    //$page = $url[1]; // URL Online
+    //$page = $url[2]; // URL Local
+    $page = $url[1]; // URL Online
 
     // Verifica qual a pagina que usuario acessou e muda a variavel titulo de acorco com o titulo definido
     switch ($page) {
@@ -222,7 +222,7 @@
 
 
     <!-- Menu Hamburguer -->
-    <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat' and $page != 'acesso-negado' and $page != 'administrativo' and $page != 'editar-usuario'){ ?> 
+    <?php if($page != 'login' and $page != 'cadastro' and $page != 'chat' and $page != 'acesso-negado' and $page != 'administrativo' and $page != 'editar-usuario' and $page != 'administrativo-pet'){ ?> 
         <div class="block-teste">
             <input class="input-home" id="navbar" type='checkbox'>
             <label for="navbar">
@@ -262,7 +262,7 @@
                 success: function(resposta){
                     var racas = JSON.parse(resposta);
                     localStorage.setItem('racas', JSON.stringify(racas.data));
-                    console.log(racas);
+                    
                 },
                 error : function(erro){
                     console.log(erro);
@@ -420,10 +420,10 @@
                     document.getElementById("passo-6").classList.remove("depois");
                     document.getElementById("passo-6").classList.add("passo-ativo");
                     document.getElementById("botao-passo5").style.display = "none";
-                    document.getElementById("botao-passo6").style.display = "block";
+                    document.getElementById("botao-salvar").style.display = "block";
                     document.getElementById("passo").style.height = document.getElementById("passo-6").offsetHeight+'px';
                     break;
-                case 7:
+                /*case 7:
                     document.getElementById("passo-6").classList.remove("passo-ativo");
                     document.getElementById("passo-6").classList.add("antes");
                     document.getElementById("passo-7").classList.remove("depois");
@@ -431,7 +431,7 @@
                     document.getElementById("botao-passo6").style.display = "none";
                     document.getElementById("botao-salvar").style.display = "block";
                     document.getElementById("passo").style.height = document.getElementById("passo-7").offsetHeight+'px';
-                    break;
+                    break;*/
                 default:
                     break;
             }

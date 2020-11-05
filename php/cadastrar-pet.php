@@ -19,6 +19,7 @@
 
     $query = "INSERT INTO `animal` (`nome_animal`, `sexo_animal`, `data_nasc_animal`, `para_que`, `preco_animal`, `cod_raca`, `cod_usu`) VALUES 
     ('$nomeAnimal', '$sexo', '$nascimentoAnimal', '$paraQue', $precoAnimal, $raca, $cod_usu)";
+    
     $result = mysqli_query($conexao, $query);
     
     if(!$result){
