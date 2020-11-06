@@ -6,7 +6,7 @@
     
     <main class="div-foto">
         <div>
-            <img src="imagens/fotos_usuario/<?php echo $user['imagem_usu'] ?>">
+            <img src="foto/<?php echo $user['imagem_usu'] ?>">
         </div>
     </main>
     

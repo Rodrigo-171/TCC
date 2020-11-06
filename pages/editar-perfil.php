@@ -2,55 +2,38 @@
 $user = $_SESSION['user_logado']; 
 $cod_usu = $user['cod_usu'];
 include("php/conexao.php");
-
-$msg = false;
-if(isset($_FILES['arquivo'])){
-    $arquivo = $_FILES['arquivo']['name'];
-    $extensao = strtolower(pathinfo($arquivo, PATHINFO_EXTENSION));
-    
-    $novo_nome = md5(time()).".".$extensao;
-    
-    $diretorio = "upload/";
-    
-    move_uploaded_file($_FILES['arquivo']['tmp_name'], $diretorio . $novo_nome);
-    
-    $sql_code = "INSERT INTO foto(cod_foto, url_foto, cod_animal, cod_usu, cod_status_foto, data) VALUES('','$novo_nome', '', '$cod_usu', 'U', NOW())";
-    
-    if(mysqli_query($conexao, $sql_code))
-        $msg = "Arquivo enviado com sucesso!";
-    else
-        $msg = "Falha ao enviar arquivo!";
-}
-$sql_busca = "SELECT * FROM foto WHERE cod_usu = '$cod_usu'";
-//var_dump($sql_busca); die;
-$mostrar = mysqli_query($conexao, $sql_busca);
 ?>
-
-
 <div class="body-perfil-pet">
     
-    <main class="div-foto">
-       
+    <main class="div-foto"> 
         <div>
-            <img src="imagens/fotos_usuario/<?php echo $user['imagem_usu'] ?>">
+            <img src="foto/<?php echo $user['imagem_usu'] ?>">
         </div>
     </main>
-
     <div class="button-perfil">        
-        <div>
-            <a href="#"><i class="fas fa-camera"></i><br>Trocar de foto</a>
-        </div>
         <div>
             <a href="php/deslogar.php"><i class="fas fa-sign-out-alt"></i><br>Sair</a>
         </div>
         <div>
             <a href="javascript: if(confirm('Tem certeza que deseja deletar o usuário <?php echo $user['nome_usu'] ?>?'))
-			location.href='php/apagar-usuario.php?p=deletar&usuario=<?php echo $user['cod_usu'];?>';"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
-        </div>
+              location.href='php/apagar-usuario.php?p=deletar&usuario=<?php echo $user['cod_usu'];?>';"><i class="fas fa-user-times"></i><br>Excluir perfil</a>
+        </div> 
     </div>
 
     <section class="acc-container">
         <h2>Editar informações</h2>
+        <div class="dados-perfil">
+            <form action="php/upload.php" method="POST" enctype="multipart/form-data">
+                <div class="fileUpload">
+                    <i class="fas fa-camera"></i><br>
+                    Trocar foto
+                    <input type="file" class="upload" name="arquivo" id="imagem" onchange="previewImagem()">
+                </div><br><br>
+                <img id="foto" style="width: 130px; height: 130px; border-radius:100%"><br>
+                <input class="submit-foto"type="submit" value="Enviar"> 
+            </form>
+        </div>
+
         <form action="php/alterar-perfil.php" method="POST">
             <div class="dados-perfil">
                 <ul class="ul-dados-perfil">
@@ -110,3 +93,23 @@ $mostrar = mysqli_query($conexao, $sql_busca);
         <input class="bottom-TE2" type="submit" value="Cancelar">
     </div>
 </div>
+
+<script>
+    function previewImagem(){
+        var imagem = document.querySelector('input[name=arquivo]').files[0];
+        var preview = document.querySelector('img[id=foto]');
+
+        var reader = new FileReader();
+
+        reader.onloadend = function(){
+            preview.src = reader.result;
+        }
+        if(imagem){
+            reader.readAsDataURL(imagem);
+        }else{
+            preview.src = "";
+        }
+    }   
+</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
