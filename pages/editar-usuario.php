@@ -1,6 +1,8 @@
 <?php
   include('../php/conexao.php');
-
+  include("php/protect.php");
+  protect();
+  
   $cod_usu = intval($_GET['usuario']);
 
   $result_usuario = "SELECT * FROM usuario WHERE cod_usu = '$cod_usu'";

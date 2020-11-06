@@ -1,6 +1,7 @@
 <?php
 include_once("php/conexao.php");
-
+include("php/protect.php");
+protect();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
