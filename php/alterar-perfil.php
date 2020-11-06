@@ -25,7 +25,12 @@
     
     $result_endereco = "UPDATE enderecos SET cep = '$cep', numero = '$numero', bairro = '$bairro', cidade = '$cidade', estado = 'estado', rua = 'rua' WHERE cod_usu = '$cod_usu'";                                 
     $resultado_endereco = mysqli_query($conexao, $result_endereco);
- 
+
+    $result_final = "SELECT * FROM usuario AS U INNER JOIN enderecos AS E ON U.cod_usu = E.cod_usu";
+	$resultado_final = mysqli_query($conexao, $result_final);
+					
+	$row = mysqli_fetch_assoc($resultado_final);
+	$_SESSION['user_logado'] = $row;
     
-    header("Location: ../perfil-pessoa");
+    header("Location: ../editar-perfil");
 ?>

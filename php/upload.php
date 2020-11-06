@@ -75,7 +75,12 @@
 					$query = mysqli_query($conexao, "INSERT INTO foto (
                     url_foto, cod_status_foto, cod_usu) VALUES('$nome_final', 'A', '$cod_usu')");
                     $result_foto = "UPDATE usuario SET imagem_usu = '$nome_final' WHERE cod_usu='$cod_usu'";
-                    $resultado_foto = mysqli_query($conexao, $result_foto);
+					$resultado_foto = mysqli_query($conexao, $result_foto);
+					$result_final = "SELECT * FROM usuario AS U INNER JOIN enderecos AS E ON U.cod_usu = E.cod_usu";
+					$resultado_final = mysqli_query($conexao, $result_final);
+					
+					$row = mysqli_fetch_assoc($resultado_final);
+					$_SESSION['user_logado'] = $row;
                    
 					echo "
 						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/tcc/editar-perfil'>
