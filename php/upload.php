@@ -42,7 +42,7 @@
             
 			if(array_search($extensao, $_UP['extensoes'])=== false){		
 				echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/tcc/editar-perfil'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://networkpet.herokuapp.com/editar-perfil'>
 					<script type=\"text/javascript\">
 						alert(\"A imagem não foi cadastrada extensão inválida.\");
 					</script>
@@ -52,7 +52,7 @@
 			//Faz a verificação do tamanho do arquivo
 			else if ($_UP['tamanho'] < $_FILES['arquivo']['size']){
 				echo "
-					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/tcc/editar-perfil'>
+					<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://networkpet.herokuapp.com/editar-perfil'>
 					<script type=\"text/javascript\">
 						alert(\"Arquivo muito grande.\");
 					</script>
@@ -83,7 +83,7 @@
 					$_SESSION['user_logado'] = $row;
                    
 					echo "
-						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/tcc/editar-perfil'>
+						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://networkpet.herokuapp.com/editar-perfil'>
 						<script type=\"text/javascript\">
 							alert(\"Imagem cadastrada com Sucesso.\");
 						</script>
@@ -92,7 +92,7 @@
 				}else{
 					//Upload não efetuado com sucesso, exibe a mensagem
 					echo "
-                        <META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://localhost/tcc/editar-perfil'>
+						<META HTTP-EQUIV=REFRESH CONTENT = '0;URL=http://networkpet.herokuapp.com/editar-perfil'>
 						<script type=\"text/javascript\">
 							alert(\"Imagem não foi cadastrada com Sucesso.\");
 						</script>
