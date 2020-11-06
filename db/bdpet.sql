@@ -131,14 +131,15 @@ select * from `especie`;
 
 DROP TABLE IF EXISTS `foto`;
 CREATE TABLE IF NOT EXISTS `foto` (
-  `cod_foto` int(11) NOT NULL,
+  `cod_foto` int(11) NOT NULL AUTO_INCREMENT,
   `url_foto` varchar(100) DEFAULT NULL,
   `Cod_animal` int(11) DEFAULT NULL,
   `Cod_usu` int(11) DEFAULT NULL,
   `cod_status_foto` varchar(1) DEFAULT NULL,
   `data` datetime,
   PRIMARY KEY (`cod_foto`),
-  KEY `Cod_animal` (`Cod_animal`)
+  KEY `Cod_animal` (`Cod_animal`),
+  KEY `Cod_usu` (`Cod_usu`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -260,8 +261,11 @@ UPDATE usuario SET nome_usu = 'Rodrigo', email_usu = 'joao@network.com', celular
 --
 SELECT * FROM `usuario`; 
 SELECT * FROM `enderecos`;
-UPDATE enderecos SET cep = '06418060', numero = '515' WHERE cod_usu = '5';
-DELETE FROM usuario WHERE cod_usu = '1500';
+
+SELECT *
+FROM usuario AS U
+INNER JOIN enderecos AS E ON U.cod_usu = E.cod_usu;
+
 
 INSERT INTO `usuario` (`cod_usu`, `cod_tipo_usu`, `nome_usu`, `email_usu`, `senha_usu`, `cpf`, `genero_usu`, `celular_usu`, `nascimento_usu`, `imagem_usu`, `cod_status_usu`) VALUES
 (1, 1, 'joao', 'joao@network.com', '2c13817fca846f6f9a7d934d71a668ee', '52334374814', 'M', 11972596964, '2002-12-02', 'fotoPerfil.jpg', 'A');
