@@ -1,7 +1,7 @@
 <?php
   include('../php/conexao.php');
-  include("php/protect.php");
-  protect();
+  //include("php/protect.php");
+  //protect();
   
   $cod_usu = intval($_GET['usuario']);
 

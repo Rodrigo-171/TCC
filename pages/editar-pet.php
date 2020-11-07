@@ -1,7 +1,7 @@
 <?php
   include('../php/conexao.php');
-  include("php/protect.php");
-  protect();
+  //include("php/protect.php");
+  //protect();
   $cod_animal = intval($_GET['animal']);
 
   $result_pet = "SELECT nome_raca AS raca,
